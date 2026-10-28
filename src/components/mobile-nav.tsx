@@ -49,13 +49,15 @@ function Sheet({
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpenOn(null);
-    const overflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    document.documentElement.dataset.menuOpen = "";
+    // Lock scrolling on <html>: it sets overflow-x itself (globals.css), so overflow on <body> alone has no effect.
+    const root = document.documentElement;
+    const overflow = root.style.overflow;
+    root.style.overflow = "hidden";
+    root.dataset.menuOpen = "";
     document.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = overflow;
-      delete document.documentElement.dataset.menuOpen;
+      root.style.overflow = overflow;
+      delete root.dataset.menuOpen;
       document.removeEventListener("keydown", onKey);
     };
   }, [open]);
@@ -80,7 +82,7 @@ function Sheet({
       <div
         id="mobile-menu"
         inert={!open}
-        className={`fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col overflow-y-auto bg-white transition duration-200 ${open ? "visible opacity-100" : "invisible opacity-0"}`}
+        className={`fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col overflow-y-auto overscroll-contain bg-white transition duration-200 ${open ? "visible opacity-100" : "invisible opacity-0"}`}
       >
         <nav className="px-5 pt-2">
           {links.map((item) => {
