@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Saffet Education — сайт
 
-## Getting Started
+Next.js 16 (App Router) + TypeScript + Tailwind CSS 4.
+Референсы и разбор sitconnect.net и похожих сайтов лежат в `../references/`.
 
-First, run the development server:
+## Запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # продакшен-сборка
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Данные
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Сайт берёт вузы и программы из `../turkey_universities/sitconnect_turkey/<город>/`.
+Скрипт сжимает их в `src/data/*.json` (42 вуза, 5 203 программы).
+После того как обновите данные парсером, запустите:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run data
+```
 
-## Learn More
+## Языки
 
-To learn more about Next.js, take a look at the following resources:
+Русский, азербайджанский и английский: адреса `/ru/...`, `/az/...`, `/en/...`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/` перенаправляет на язык, выбранный раньше (cookie `NEXT_LOCALE`), иначе на язык браузера, иначе на русский (`src/proxy.ts`).
+- Все тексты лежат в `src/i18n/dictionaries/{ru,az,en}.ts`. Русский словарь задаёт структуру: если в `az.ts` или `en.ts` пропустить ключ, TypeScript выдаст ошибку.
+- В серверных компонентах: `const { t, locale, href } = await getI18n()`. `href("/programs")` даёт `/az/programs`.
+- Новый язык: добавить код в `src/i18n/config.ts` и файл словаря.
+- Названия вузов и программ остаются на английском, как в исходных данных.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Структура
 
-## Deploy on Vercel
+```
+src/
+  app/[lang]/                 все страницы внутри языкового сегмента
+    page.tsx                  главная
+    programs/page.tsx         поиск программ (фильтры в URL)
+    programs/[id]/page.tsx    страница программы
+    universities/page.tsx     список вузов
+    universities/[slug]/      страница вуза
+    apply/page.tsx            заявка
+  i18n/                       языки: config, словари, getI18n()
+  proxy.ts                    редирект на нужный язык
+  components/                 шапка, футер, карточки, формы
+  lib/
+    data.ts                   загрузка данных и поиск
+    format.ts                 форматирование цен, дат, сроков
+    site.ts                   телефон, WhatsApp, почта, меню  ← заменить на реальные
+  data/                       сгенерированные JSON
+scripts/build-data.mjs        сборка src/data из спарсенных файлов
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Что заменить перед запуском
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/lib/site.ts`: телефон, номер WhatsApp, почта, соцсети.
+- Логотип: `src/components/logo.tsx`.
+- Цвета и шрифты: токены в `src/app/globals.css` (блок `@theme`).
+- Обложки вузов сейчас сгенерированы (градиент + инициалы). Свои фото можно положить в `public/` и подключить в `UniCover`.
+- Форма заявки пока открывает WhatsApp с готовым текстом. Отправка на сервер (Telegram-бот или почта) помечена `TODO` в `src/components/apply-form.tsx`.

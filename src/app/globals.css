@@ -1,26 +1,446 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Design tokens (measured from the sitconnect.net reference). */
+@theme {
+  --color-ink: #0b1630;
+  --color-muted: #5d6470;
+  --color-line: #e7e9ed;
+  --color-surface: #f4f5f7;
+
+  --color-brand: #0360eb;
+  --color-brand-dark: #0250c5;
+  --color-brand-deep: #0244b0;
+  --color-brand-soft: #ebf3ff;
+  --color-brand-100: #d4e5ff;
+
+  --color-ink-50: #f5f7fc;
+  --color-ink-100: #e9eef8;
+  --color-ink-200: #dfe6f2;
+  --color-ink-400: #6b7690;
+  --color-ink-600: #47526b;
+  --color-ink-800: #172347;
+  --color-ink-900: #0a1633;
+
+  --color-sun: #ff9e1b;
+  --color-sun-400: #ffb54d;
+  --color-success: #12895a;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: var(--font-space), var(--font-manrope), ui-sans-serif, system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  --shadow-card: 0 1px 2px #0a16330f, 0 8px 24px -8px #0a16331f;
+  --shadow-lift: 0 18px 45px #0f172a17;
+  --shadow-hover: 0 2px 4px #0a16330f, 0 18px 40px -12px #0a16332e;
+  --radius-card: 24px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Nothing should widen the page sideways on phones. `clip` (unlike `hidden`) keeps the sticky header working. */
+html,
+body {
+  overflow-x: clip;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: var(--color-ink);
+}
+
+@layer components {
+/* Orange slanted bar under the key word of a heading. */
+.highlight {
+  position: relative;
+  z-index: 0;
+  white-space: nowrap;
+}
+.highlight::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -0.08em;
+  right: -0.08em;
+  bottom: 0.05em;
+  height: 0.43em;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--color-sun) 80%, transparent);
+  transform: skewX(-8deg);
+}
+.highlight-sun {
+  color: var(--color-sun-400);
+}
+.highlight-sun::after {
+  display: none;
+}
+
+.container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1380px;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) {
+  .container-page {
+    padding-inline: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container-page {
+    padding-inline: 4rem;
+  }
+}
+
+/* Small red pill above section titles. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--color-brand) 20%, transparent);
+  background: var(--color-brand-soft);
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: #0356d6;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.card {
+  border-radius: var(--radius-card);
+  background: #fff;
+  box-shadow: var(--shadow-card);
+}
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background: var(--color-brand);
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 8px 18px #0360eb33;
+  transition: background 0.2s;
+}
+.btn-primary:hover {
+  background: var(--color-brand-dark);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 9999px;
+  border: 2px solid #0a16331a;
+  background: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink-900);
+  transition: border-color 0.2s;
+}
+.btn-ghost:hover {
+  border-color: #0a163340;
+}
+
+.field {
+  height: 52px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e3e6ea;
+  background: #fff;
+  padding-inline: 0.9rem;
+  font-size: 15px;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.field-sm {
+  height: 44px;
+  font-size: 14px;
+}
+.field:focus {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px var(--color-brand-soft);
+}
+select.field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235d6470' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.25rem;
+}
+
+/* Soft pink/peach page header used on catalog pages. */
+.page-glow {
+  background:
+    radial-gradient(40% 90% at 85% 0%, #e6f0ff 0%, transparent 70%),
+    radial-gradient(35% 80% at 15% 0%, #eef3ff 0%, transparent 70%),
+    #fff;
+}
+
+/* Dark footer with red and orange glows and a faint tile pattern. */
+.mesh-dark {
+  background-color: var(--color-ink-900);
+  background-image:
+    radial-gradient(672px 416px at 90% 0, #0360eb59, transparent 55%),
+    radial-gradient(640px 448px at 0 100%, #ff9e1b38, transparent 55%);
+}
+.tiles {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' fill='none' stroke='%23ffffff' stroke-opacity='0.035'%3E%3Crect x='10' y='10' width='28' height='28' rx='6'/%3E%3Ccircle cx='24' cy='24' r='7'/%3E%3C/svg%3E");
+}
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes draw-x {
+  from { transform: skewX(-8deg) scaleX(0); }
+  to { transform: skewX(-8deg) scaleX(1); }
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+@keyframes shine {
+  from { transform: translateX(-120%) skewX(-20deg); }
+  to { transform: translateX(220%) skewX(-20deg); }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.08); }
+}
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Hero copy enters in sequence on load. */
+.enter { animation: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: var(--d, 0s); }
+
+/* The orange bar under highlighted words draws itself in. */
+.highlight::after { transform-origin: left; animation: draw-x 0.8s cubic-bezier(0.6, 0, 0.2, 1) 0.45s both; }
+
+.float { animation: float-y 6s ease-in-out infinite; }
+.float-delayed { animation: float-y 7s ease-in-out 1.2s infinite; }
+.glow-pulse { animation: glow-pulse 5s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+
+/* Scroll reveal: elements with data-reveal start hidden only once JS has marked the page (data-reveal-js on <html>). */
+[data-reveal-js] [data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0s);
+}
+[data-reveal-js] [data-reveal][data-shown] { opacity: 1; transform: none; }
+
+/* Light sweep across primary buttons on hover. */
+.btn-primary, .btn-shine { position: relative; overflow: hidden; isolation: isolate; }
+.btn-primary::after, .btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.35), transparent);
+  transform: translateX(-120%) skewX(-20deg);
+  pointer-events: none;
+}
+.btn-primary:hover::after, .btn-shine:hover::after { animation: shine 0.8s ease; }
+
+/* Card arrows slide on hover. */
+.group:hover .arrow-dot { transform: translateX(3px); }
+.arrow-dot { transition: transform 0.25s ease, background-color 0.25s ease; }
+
+.marquee { mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { animation: marquee 90s linear infinite; } /* slow: names should be readable */
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.animated-gradient { background-size: 200% 200%; animation: gradient-pan 12s ease infinite; }
+
+/* Header gains a shadow once the page scrolls (where scroll timelines are supported). */
+@supports (animation-timeline: scroll()) {
+  @keyframes header-shadow { to { box-shadow: 0 10px 30px -18px #0b163059; } }
+  .header-scroll { animation: header-shadow linear both; animation-timeline: scroll(); animation-range: 0 120px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  [data-reveal-js] [data-reveal] { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* Hero search tabs: the new form's fields slide in one after another from the side of the tab that was picked. */
+@keyframes tab-field-in {
+  from { opacity: 0; transform: translateX(var(--dx, 16px)); filter: blur(2px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+.tab-swap > * { animation: tab-field-in 0.42s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.tab-swap > :nth-child(2) { animation-delay: 0.04s; }
+.tab-swap > :nth-child(3) { animation-delay: 0.08s; }
+.tab-swap > :nth-child(4) { animation-delay: 0.12s; }
+.tab-swap > :nth-child(5) { animation-delay: 0.16s; }
+
+/* Hero search, second take: the underline glides between text tabs; each segment's select fills the whole cell under its small label. */
+.tab-bar { transition: left 0.4s cubic-bezier(0.3, 1.2, 0.4, 1), width 0.4s cubic-bezier(0.3, 1.2, 0.4, 1); }
+.seg-select {
+  display: block;
+  height: 64px;
+  width: 100%;
+  appearance: none;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7690' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 1rem center;
+  padding: 1.45rem 2.25rem 0.4rem 1rem;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-ink);
+  text-overflow: ellipsis;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Program page: the campus photo settles from a slight zoom as the page opens. */
+@keyframes photo-in {
+  from { transform: scale(1.12); }
+  to { transform: none; }
+}
+.photo-in img { animation: photo-in 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+/* Program page hero: a faint dot grid that fades out toward the text. */
+.hero-dots {
+  background-image: radial-gradient(#0360eb2e 1.2px, transparent 1.4px);
+  background-size: 20px 20px;
+  mask-image: linear-gradient(to left, #000 10%, transparent 85%);
+}
+
+/* Program page: the line between steps draws downward once its section is revealed. */
+.grow-line { transform-origin: top; transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s); }
+[data-reveal-js] [data-reveal]:not([data-shown]) .grow-line { transform: scaleY(0); }
+
+/* Header dropdown: the panel fades and slides down, its cards follow one after the other. */
+.mega-panel > div {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.99);
+  transform-origin: top center;
+  transition: opacity 0.22s ease, transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.mega-panel[data-open] > div { opacity: 1; transform: none; }
+.mega-panel { transition: visibility 0s linear 0.3s; }
+.mega-panel[data-open] { transition-delay: 0s; }
+.mega-item { opacity: 0; transform: translateY(8px); transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.mega-panel[data-open] .mega-item { opacity: 1; transform: none; transition-delay: var(--d, 0s); }
+
+/* Numbered points: a glowing line sweeps in from the left over each point in turn, then slides out to the right.
+   A full pass over the four points takes 8s; each point starts 2s after the previous one. */
+@keyframes perk-sweep {
+  0% { clip-path: inset(0 100% 0 0); }
+  18%, 28% { clip-path: inset(0 0 0 0); }
+  40%, 100% { clip-path: inset(0 0 0 100%); }
+}
+@keyframes perk-num {
+  0%, 40%, 100% { color: var(--color-ink-400); }
+  10%, 30% { color: var(--color-brand); }
+}
+.perk-line { clip-path: inset(0 100% 0 0); animation: perk-sweep 8s cubic-bezier(0.65, 0, 0.35, 1) infinite both; animation-delay: calc(var(--i, 0) * 2s); }
+@keyframes perk-title {
+  0%, 40%, 100% { color: var(--color-ink); }
+  10%, 30% { color: var(--color-brand); }
+}
+.perk-num { animation: perk-num 8s ease infinite both; animation-delay: calc(var(--i, 0) * 2s); }
+.perk-title { animation: perk-title 8s ease infinite both; animation-delay: calc(var(--i, 0) * 2s); }
+@media (prefers-reduced-motion: reduce) {
+  .perk-line { display: none; }
+}
+
+/* Field drawings: each stroke draws itself, holds most of the time, then wipes away and starts again (8s loop).
+   Strokes use pathLength=1, so dash values of 1 cover any path. */
+@keyframes art-draw {
+  /* Opacity hides the dot that a round line cap leaves while the stroke is empty. */
+  0% { stroke-dashoffset: 1; opacity: 0; }
+  2% { opacity: 1; }
+  20%, 88% { stroke-dashoffset: 0; }
+  96% { opacity: 1; }
+  98%, 100% { stroke-dashoffset: -1; opacity: 0; }
+}
+@keyframes art-fill {
+  0%, 12% { opacity: 0; }
+  30%, 86% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+@keyframes art-blink { 50% { opacity: 0; } }
+.art-fill { animation: art-fill 8s ease-in-out infinite; animation-delay: var(--d, 0s); }
+.art-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: art-draw 8s cubic-bezier(0.65, 0, 0.35, 1) infinite; animation-delay: var(--d, 0s); }
+.art-spin { transform-box: fill-box; transform-origin: center; animation: spin-slow 14s linear infinite; }
+.art-spin-reverse { animation-direction: reverse; animation-duration: 9s; }
+.art-blink { animation: art-blink 1s steps(1) infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .art-draw { animation: none !important; stroke-dashoffset: 0; }
+  .art-fill { animation: none !important; }
+}
+
+/* Promo banners: the stars twinkle and the sparkle turns slowly on the dark banner. */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.twinkle { animation: twinkle 3s ease-in-out infinite; animation-delay: var(--d, 0s); }
+.spin-slow { animation: spin-slow 12s linear infinite; }
+
+/* Hero photo scenes: crossfade, a slow zoom and drift on the visible photo, caption slides up. */
+@keyframes ken-burns {
+  from { transform: scale(1.02) translate(0, 0); }
+  to { transform: scale(1.14) translate(var(--drift, 0, 0)); }
+}
+@keyframes progress-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.hero-slide { opacity: 0; transition: opacity 1.2s ease; }
+.hero-slide[data-active] { opacity: 1; }
+.hero-slide[data-active] img { animation: ken-burns var(--dur, 8s) ease-out both; }
+.hero-caption { opacity: 0; transform: translateY(100%); transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.hero-caption[data-active] { opacity: 1; transform: none; transition-delay: 0.25s; }
+.hero-progress { animation-name: progress-fill; animation-timing-function: linear; animation-fill-mode: both; }
+.hero-slides:hover .hero-progress, .hero-slides:hover .hero-slide img { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-progress { animation: none !important; transform: scaleX(1); }
 }

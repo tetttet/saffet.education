@@ -1,0 +1,1255 @@
+[
+  {
+    "id": "cmqwkgihu06sonwqo659dr5wk",
+    "fee": 4200,
+    "feeOfficial": 4200,
+    "years": 1.5,
+    "reason": "Üsküdar University: 6300 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihu06spnwqord6lb4ox",
+    "fee": 3650,
+    "feeOfficial": 3650,
+    "years": 2.0,
+    "reason": "Üsküdar University: 7300 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihv06t1nwqogdkk755e",
+    "fee": 10133,
+    "feeOfficial": 10133,
+    "years": 1.5,
+    "reason": "Üsküdar University: 15200 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihv06t2nwqol9yjnlkh",
+    "fee": 8700,
+    "feeOfficial": 8700,
+    "years": 2.0,
+    "reason": "Üsküdar University: 17400 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihw06tfnwqoyjkxgzym",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihw06tgnwqo6kh5u8iz",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihw06tmnwqog4nfd8mr",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihw06tnnwqoxujxo9gg",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihw06tonwqof1mptcvi",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihw06ttnwqobzwc58zh",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihw06tunwqopayqhy3f",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihw06tznwqov8hkwv2v",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihw06u0nwqoitee0g8y",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihy06uynwqov1uwt8sm",
+    "fee": 1950,
+    "feeOfficial": 1950,
+    "years": 4,
+    "reason": "Üsküdar University: 7800 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkgihy06v5nwqocllnizi2",
+    "fee": 1950,
+    "feeOfficial": 1950,
+    "years": 4,
+    "reason": "Üsküdar University: 7800 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkg6i6014qnwqo6xcl2dt9",
+    "fee": 4775,
+    "feeOfficial": 4775,
+    "years": 4,
+    "reason": "Üsküdar University: 19100 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkg6i6014jnwqonzvnpfds",
+    "fee": 1950,
+    "feeOfficial": 1950,
+    "years": 4,
+    "reason": "Üsküdar University: 7800 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkg6i7015lnwqowh0w4vcg",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihy06utnwqo4jst6fmr",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihy06usnwqocvnvzuvo",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i7015gnwqokvsu70n7",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i7015dnwqo5pikgmhj",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i7015cnwqog2942uf2",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihy06v8nwqo0ywe8wzo",
+    "fee": 6650,
+    "feeOfficial": 6650,
+    "years": 2.0,
+    "reason": "Üsküdar University: 13300 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihx06uenwqow2zgcjdx",
+    "fee": 4575,
+    "feeOfficial": 4575,
+    "years": 2.0,
+    "reason": "Üsküdar University: 9150 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihu06smnwqol7glpwgs",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihu06snnwqo1obe2vti",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i8016tnwqo03b9pzyl",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i8016snwqo3lf9s5zf",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i8016bnwqou1hjhew1",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i8016anwqodkhaq9wm",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i80169nwqoe8xc6ab4",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i80168nwqoj8c8d5jf",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihy06uqnwqovh5vx0sz",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i60151nwqo0pdu3a71",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihw06twnwqoegykz00w",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihw06tynwqo0747wjl4",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihw06tvnwqo5ayx9o2a",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i7015vnwqomtivbjpc",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i7015rnwqo0f1po1ov",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i7015qnwqo8e7g2gzf",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihx06u3nwqo1sqk1z5k",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihx06u4nwqoyxxyb8rh",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgg3205c0nwqocq809mnh",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgg3205c1nwqodvcaxvjc",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihx06ujnwqoxg17bg9d",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihx06uknwqo2f9jyaj5",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihy06uvnwqoby21v2tq",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihy06uunwqonflapl9p",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i6014mnwqogrtzoass",
+    "fee": 2250,
+    "feeOfficial": 2250,
+    "years": 4,
+    "reason": "Üsküdar University: 9000 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkg6i6014vnwqo9ljauk7v",
+    "fee": 1950,
+    "feeOfficial": 1950,
+    "years": 4,
+    "reason": "Üsküdar University: 7800 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkgem204e9nwqo87xw8u6q",
+    "fee": 2250,
+    "feeOfficial": 2250,
+    "years": 4,
+    "reason": "Üsküdar University: 9000 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkg6i6014tnwqo2i27ivfa",
+    "fee": 2250,
+    "feeOfficial": 2250,
+    "years": 4,
+    "reason": "Üsküdar University: 9000 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkg6i6014snwqoh2pwq3op",
+    "fee": 2250,
+    "feeOfficial": 2250,
+    "years": 4,
+    "reason": "Üsküdar University: 9000 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkg6i6014rnwqotqylqiv6",
+    "fee": 1950,
+    "feeOfficial": 1950,
+    "years": 4,
+    "reason": "Üsküdar University: 7800 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkgihy06v7nwqodh84zgs1",
+    "fee": 2250,
+    "feeOfficial": 2250,
+    "years": 4,
+    "reason": "Üsküdar University: 9000 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkg6i6014pnwqo5irp3c9z",
+    "fee": 2250,
+    "feeOfficial": 2250,
+    "years": 4,
+    "reason": "Üsküdar University: 9000 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkg6i7015knwqob4qzbje4",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihx06u9nwqo3cvc2ip0",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i7015inwqocsd94zge",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i7015hnwqoaqs0qn2m",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i70157nwqonxtll3y6",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihx06umnwqoquqzs480",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i70155nwqod7xcageg",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihu06srnwqo0gx335ze",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihu06stnwqo2sg8mq9l",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihu06sqnwqo1j0tn054",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihu06ssnwqorpelwhfz",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihv06sunwqotc2aanct",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihv06svnwqofg5yvnvp",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihv06swnwqors2sae2s",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihv06sxnwqooshluxit",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i8016unwqomt7c37uf",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihv06t3nwqohhi41pph",
+    "fee": 3400,
+    "feeOfficial": 3400,
+    "years": 1.5,
+    "reason": "Üsküdar University: 5100 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihv06t5nwqou5bv6frp",
+    "fee": 2850,
+    "feeOfficial": 2850,
+    "years": 2.0,
+    "reason": "Üsküdar University: 5700 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihv06t4nwqo65vsw284",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i8016mnwqo1cd3ai6i",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i8016lnwqouaokck10",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i8016jnwqoxl8r4dag",
+    "fee": 2850,
+    "feeOfficial": 2850,
+    "years": 2.0,
+    "reason": "Üsküdar University: 5700 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6i8016knwqocwmfgiiu",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i8016inwqozxhnruv1",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihv06tbnwqoe1qybr26",
+    "fee": 3400,
+    "feeOfficial": 3400,
+    "years": 1.5,
+    "reason": "Üsküdar University: 5100 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihv06tcnwqozix8bg43",
+    "fee": 2850,
+    "feeOfficial": 2850,
+    "years": 2.0,
+    "reason": "Üsküdar University: 5700 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihv06tdnwqor77osbrp",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkg6i8016enwqoddt2ct82",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihw06tqnwqo9pwzpj1m",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihw06tsnwqowqt3x7nm",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihw06tpnwqotxx0ciu6",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihw06trnwqo2s0rtzbu",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihy06uwnwqotrdlvb2h",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihx06uonwqot2mywrgn",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihx06upnwqozitcyf4s",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg8ew01vmnwqo4i3mniqy",
+    "fee": 2400,
+    "feeOfficial": 2400,
+    "years": 2.0,
+    "reason": "Üsküdar University: 4800 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihx06uinwqompe6o4th",
+    "fee": 2933,
+    "feeOfficial": 2933,
+    "years": 1.5,
+    "reason": "Üsküdar University: 4400 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgihx06uhnwqo0w0gjg7m",
+    "fee": 2550,
+    "feeOfficial": 2550,
+    "years": 2.0,
+    "reason": "Üsküdar University: 5100 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgihy06v4nwqocev7ivs7",
+    "fee": 1950,
+    "feeOfficial": 1950,
+    "years": 4,
+    "reason": "Üsküdar University: 7800 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkgg3d05l2nwqotm6cba6q",
+    "fee": 1750,
+    "feeOfficial": 3500,
+    "years": 2.0,
+    "reason": "İstanbul Kent University: 3500 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgg3d05l1nwqockzogaar",
+    "fee": 1667,
+    "feeOfficial": 3333,
+    "years": 1.5,
+    "reason": "İstanbul Kent University: 2500 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgg3d05kynwqot9fnf4se",
+    "fee": 1750,
+    "feeOfficial": 3500,
+    "years": 2.0,
+    "reason": "İstanbul Kent University: 3500 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgg3d05l4nwqo5t3jbuim",
+    "fee": 1750,
+    "feeOfficial": 3500,
+    "years": 2.0,
+    "reason": "İstanbul Kent University: 3500 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgamz0200nwqocfs07t1d",
+    "fee": 1750,
+    "feeOfficial": 3500,
+    "years": 2.0,
+    "reason": "İstanbul Kent University: 3500 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgg3d05l3nwqosqyivghc",
+    "fee": 1667,
+    "feeOfficial": 3333,
+    "years": 1.5,
+    "reason": "İstanbul Kent University: 2500 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgamz0205nwqoxi59x9af",
+    "fee": 1667,
+    "feeOfficial": 3333,
+    "years": 1.5,
+    "reason": "İstanbul Kent University: 2500 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgamz0203nwqoipi23ggt",
+    "fee": 1667,
+    "feeOfficial": 3333,
+    "years": 1.5,
+    "reason": "İstanbul Kent University: 2500 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgg3d05kunwqo1vwmue1f",
+    "fee": 1750,
+    "feeOfficial": 3500,
+    "years": 2.0,
+    "reason": "İstanbul Kent University: 3500 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgamz01zznwqo25nevg4x",
+    "fee": 1750,
+    "feeOfficial": 3500,
+    "years": 2.0,
+    "reason": "İstanbul Kent University: 3500 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgg3d05l5nwqozqphjpgt",
+    "fee": 1667,
+    "feeOfficial": 3333,
+    "years": 1.5,
+    "reason": "İstanbul Kent University: 2500 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgg3d05kwnwqokq4mk6ou",
+    "fee": 7500,
+    "feeOfficial": 10000,
+    "years": 2.0,
+    "reason": "İstanbul Kent University: 15000 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgg3d05kvnwqo181o8av8",
+    "fee": 10000,
+    "feeOfficial": 13333,
+    "years": 1.5,
+    "reason": "İstanbul Kent University: 15000 USD is the full-program fee for 1.5 years"
+  },
+  {
+    "id": "cmqwkgamz01zynwqoldwzvuk7",
+    "fee": 2500,
+    "feeOfficial": 5000,
+    "years": 2.0,
+    "reason": "İstanbul Kent University: 10000 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkg6hk00mjnwqokz9cwm01",
+    "fee": 5000,
+    "feeOfficial": 10000,
+    "years": 2.0,
+    "reason": "İstanbul Kent University: 10000 USD is the full-program fee for 2 years"
+  },
+  {
+    "id": "cmqwkgemh04qynwqo9hse6o8n",
+    "fee": 1000,
+    "feeOfficial": 1500,
+    "years": 4.0,
+    "reason": "İstanbul Kent University: 4000 USD is the full-program fee for 4 years"
+  },
+  {
+    "id": "cmqwkghaz068mnwqo9epq889l",
+    "fee": 12000,
+    "feeOfficial": 12000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106ahnwqokmsvenk3",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206atnwqol1yybmms",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206aunwqorw0gfv2k",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106agnwqo9stoy6i0",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb0069pnwqoz7nqxpxo",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb0069onwqoag1e8p3g",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206avnwqoktc17t00",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206awnwqomhq30e8w",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb1069wnwqoxe80kufi",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106a1nwqoob09w43d",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206axnwqof2pp9c1m",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106ajnwqocmeqzn8r",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106a3nwqovsmnfwbu",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206aynwqolgue8v0n",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206aknwqolceiy9ig",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206alnwqo6fi9lc1m",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206aznwqoad599kdo",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106a6nwqoje9nn6mz",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106a5nwqo2hhubm94",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkgk5h07i9nwqou39e07g0",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106afnwqo8nqzj3mw",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206b1nwqozepblspz",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb1069snwqo7dz73dq7",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206b3nwqo6uldwmz5",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206b4nwqoqymfrt59",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206asnwqon83dfqzd",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106ainwqoinga1ua0",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206aonwqoxsvrboxg",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206b5nwqoypgmt9uc",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206b6nwqo84cs9hoa",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106a8nwqodubx2i47",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106adnwqom1oiyy2e",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkgk5h07ianwqo17a9ma0t",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106aenwqo3ayfl37u",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206b8nwqodnh0yj9r",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206arnwqo8fyyills",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206b7nwqor150rity",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkgd4r03qcnwqovvfjp3hw",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkgd4r03qdnwqosaxn3pr2",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmv94zrgz0a4frfwvvfbtr57e",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb1069ynwqofwhthyam",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkgd4r03qknwqo1m8nndvc",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmr29o3su00c0tnynegypziyc",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkgd4r03qfnwqoqy235i4j",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmr29o3su00bztnyn2oahks5i",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmr29o3su00c1tnynmlgb3flg",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkgd4s03qpnwqoz670sskg",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkgd4s03qnnwqox5oxjl2q",
+    "fee": 4000,
+    "feeOfficial": 4000,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb1069unwqojpyw2ywz",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206banwqol9etwmov",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206b0nwqolqvtjc45",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106aanwqoc8uwrjmv",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206bbnwqogza2hmur",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb0069rnwqo0sxrohms",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206b2nwqou0m20l2z",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206b9nwqowh6n74az",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb1069tnwqouiyl22zy",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106a7nwqolyx2yyg3",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206amnwqo1czfhcse",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106a9nwqo54m98jph",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb1069vnwqom2bkpnm4",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106acnwqoq3aeixvx",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb106a4nwqo581434i0",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb0069nnwqo0rov0mu7",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb1069xnwqox65t3i8s",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  },
+  {
+    "id": "cmqwkghb206apnwqohwjzs8ga",
+    "fee": 3750,
+    "feeOfficial": 3750,
+    "discount": null,
+    "reason": "Medipol 2026-2027 list price (official PDF)"
+  }
+]

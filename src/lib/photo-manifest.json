@@ -1,0 +1,1174 @@
+{
+ "/hero/galata.jpg": {
+  "w": 1400,
+  "h": 933,
+  "v": "6bfe1768",
+  "widths": [
+   400,
+   640,
+   960,
+   1280
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/hero/maiden-tower.jpg": {
+  "w": 1400,
+  "h": 933,
+  "v": "06c83bfc",
+  "widths": [
+   400,
+   640,
+   960,
+   1280
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/hero/ortakoy.jpg": {
+  "w": 1400,
+  "h": 970,
+  "v": "6c3f11e4",
+  "widths": [
+   400,
+   640,
+   960,
+   1280
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/hero/students.jpg": {
+  "w": 1400,
+  "h": 788,
+  "v": "9b866e51",
+  "widths": [
+   400,
+   640,
+   960,
+   1280
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/cities/ankara.jpg": {
+  "w": 1200,
+  "h": 800,
+  "v": "51259565",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/cities/antalya.jpg": {
+  "w": 1200,
+  "h": 800,
+  "v": "d4de41e3",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/cities/istanbul.jpg": {
+  "w": 1200,
+  "h": 675,
+  "v": "493cb539",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/cities/izmir.jpg": {
+  "w": 1200,
+  "h": 800,
+  "v": "180ca8d7",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/cities/trabzon.jpg": {
+  "w": 1200,
+  "h": 800,
+  "v": "d2b3e210",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/promo/library.jpg": {
+  "w": 900,
+  "h": 1350,
+  "v": "fa347aa3",
+  "widths": [
+   400,
+   640,
+   900
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/promo/student-blue.jpg": {
+  "w": 1100,
+  "h": 733,
+  "v": "7697d271",
+  "widths": [
+   400,
+   640,
+   960
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/acibadem-university.jpg": {
+  "w": 1200,
+  "h": 630,
+  "v": "1ef00812",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/alanya-university.jpg": {
+  "w": 1200,
+  "h": 675,
+  "v": "e4be1f1f",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/altinbas-university.jpg": {
+  "w": 1200,
+  "h": 500,
+  "v": "5865bae5",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/ankara-bilim-university.jpg": {
+  "w": 1200,
+  "h": 480,
+  "v": "e24d3e2d",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/ankara-medipol-university.jpg": {
+  "w": 1200,
+  "h": 675,
+  "v": "dc575a6d",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/antalya-bilim-university.jpg": {
+  "w": 1200,
+  "h": 675,
+  "v": "300328c5",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/atilim-university.jpg": {
+  "w": 1200,
+  "h": 799,
+  "v": "04a8b4bd",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/bahcesehir-istanbul-university-2.jpg": {
+  "w": 1200,
+  "h": 904,
+  "v": "f101424b",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/beykent-university.jpg": {
+  "w": 1200,
+  "h": 488,
+  "v": "73c6f5ed",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/beykoz-university.jpg": {
+  "w": 1200,
+  "h": 800,
+  "v": "6aaefea1",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/biruni-university.jpg": {
+  "w": 1200,
+  "h": 315,
+  "v": "15bc7cc4",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/fatih-sultan-mehmet-vakif-university.jpg": {
+  "w": 1200,
+  "h": 799,
+  "v": "db8b54c6",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/fenerbahce-university.jpg": {
+  "w": 1200,
+  "h": 565,
+  "v": "296aea60",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/isik-university.jpg": {
+  "w": 1200,
+  "h": 900,
+  "v": "cdbcd735",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-atlas-university.jpg": {
+  "w": 1200,
+  "h": 591,
+  "v": "0030f182",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-aydin-university.jpg": {
+  "w": 1200,
+  "h": 900,
+  "v": "4ef7609c",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-bilgi-university.jpg": {
+  "w": 1200,
+  "h": 675,
+  "v": "363b907b",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-galata-university.jpg": {
+  "w": 1200,
+  "h": 500,
+  "v": "13258cd4",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-gelisim-university-2.jpg": {
+  "w": 1200,
+  "h": 900,
+  "v": "7dcb1b97",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-kultur-university.jpg": {
+  "w": 1000,
+  "h": 680,
+  "v": "407b04f5",
+  "widths": [
+   400,
+   640,
+   960
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-medipol-university.jpg": {
+  "w": 1200,
+  "h": 421,
+  "v": "283d85ee",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-nisantasi-university.jpg": {
+  "w": 1000,
+  "h": 562,
+  "v": "97335ee4",
+  "widths": [
+   400,
+   640,
+   960
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-okan-university.jpg": {
+  "w": 1200,
+  "h": 800,
+  "v": "54fb57ee",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-rumeli-university.jpg": {
+  "w": 1000,
+  "h": 602,
+  "v": "b4ce5fdd",
+  "widths": [
+   400,
+   640,
+   960
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/istanbul-sabahattin-zaim-university.jpg": {
+  "w": 1200,
+  "h": 900,
+  "v": "2d85caf6",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/kadir-has-university.jpg": {
+  "w": 1200,
+  "h": 737,
+  "v": "a2c5dfe1",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/lokman-hekim-university.jpg": {
+  "w": 1200,
+  "h": 675,
+  "v": "1de342e9",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/ozyegin-university.jpg": {
+  "w": 1024,
+  "h": 647,
+  "v": "a010e93c",
+  "widths": [
+   400,
+   640,
+   960
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/sabanci-university.jpg": {
+  "w": 1200,
+  "h": 627,
+  "v": "3d7af298",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/ted-university.jpg": {
+  "w": 1200,
+  "h": 900,
+  "v": "0b8c18cd",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/uskudar-university.jpg": {
+  "w": 1200,
+  "h": 900,
+  "v": "7960de07",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/yasar-university.jpg": {
+  "w": 1200,
+  "h": 890,
+  "v": "a915b119",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/yeditepe-university.jpg": {
+  "w": 1200,
+  "h": 900,
+  "v": "06ad3a21",
+  "widths": [
+   400,
+   640,
+   960,
+   1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/logos/acibadem-university.png": {
+  "w": 400,
+  "h": 271,
+  "v": "5980eb52",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/alanya-university.png": {
+  "w": 284,
+  "h": 62,
+  "v": "6b958ff5",
+  "widths": [
+   160,
+   284
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/altinbas-university.png": {
+  "w": 400,
+  "h": 124,
+  "v": "7097dfcc",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/ankara-bilim-university.png": {
+  "w": 400,
+  "h": 362,
+  "v": "c49bad1b",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/antalya-bilim-university.png": {
+  "w": 400,
+  "h": 400,
+  "v": "38b9fd79",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/atilim-university.png": {
+  "w": 400,
+  "h": 246,
+  "v": "55b2ae45",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/avrasya-university.png": {
+  "w": 400,
+  "h": 113,
+  "v": "1e847920",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/bahcesehir-istanbul-university-2.png": {
+  "w": 287,
+  "h": 400,
+  "v": "d655ff33",
+  "widths": [
+   160,
+   287
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/beykent-university.png": {
+  "w": 400,
+  "h": 105,
+  "v": "81e64f3e",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/beykoz-university.png": {
+  "w": 395,
+  "h": 400,
+  "v": "c74c359e",
+  "widths": [
+   160,
+   320,
+   395
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/biruni-university.png": {
+  "w": 400,
+  "h": 210,
+  "v": "be19517d",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/dogus-university.png": {
+  "w": 400,
+  "h": 399,
+  "v": "0a786409",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/fatih-sultan-mehmet-vakif-university.png": {
+  "w": 400,
+  "h": 192,
+  "v": "6921f639",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/fenerbahce-university.png": {
+  "w": 360,
+  "h": 360,
+  "v": "45fa5476",
+  "widths": [
+   160,
+   320
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/halic-university.png": {
+  "w": 335,
+  "h": 400,
+  "v": "d69e545a",
+  "widths": [
+   160,
+   320
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/isik-university.png": {
+  "w": 400,
+  "h": 68,
+  "v": "295ef8a3",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-arel-university.png": {
+  "w": 400,
+  "h": 389,
+  "v": "affbb226",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-aydin-university.png": {
+  "w": 400,
+  "h": 400,
+  "v": "ede0a240",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-bilgi-university.png": {
+  "w": 400,
+  "h": 91,
+  "v": "f9f36e5f",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-gelisim-university-2.png": {
+  "w": 400,
+  "h": 399,
+  "v": "6e7a3a8c",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-kent-university.png": {
+  "w": 216,
+  "h": 67,
+  "v": "6e806a4c",
+  "widths": [
+   160,
+   216
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-kultur-university.png": {
+  "w": 400,
+  "h": 131,
+  "v": "a830f865",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-medipol-university.png": {
+  "w": 400,
+  "h": 400,
+  "v": "1d88401e",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-nisantasi-university.png": {
+  "w": 400,
+  "h": 99,
+  "v": "d54fe060",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-okan-university.png": {
+  "w": 400,
+  "h": 308,
+  "v": "ce0bf209",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-sabahattin-zaim-university.png": {
+  "w": 186,
+  "h": 186,
+  "v": "2c5695ce",
+  "widths": [
+   160,
+   186
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istanbul-yeni-yuzyil-university.png": {
+  "w": 192,
+  "h": 90,
+  "v": "5560b31f",
+  "widths": [
+   160,
+   192
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/istinye-university.png": {
+  "w": 400,
+  "h": 104,
+  "v": "ef5e23f5",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/izmir-tinaztepe-university.png": {
+  "w": 400,
+  "h": 388,
+  "v": "0af84d64",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/kadir-has-university.png": {
+  "w": 400,
+  "h": 400,
+  "v": "07c2bb6c",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/lokman-hekim-university.png": {
+  "w": 400,
+  "h": 400,
+  "v": "b14b4fad",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/ostim-technical-university.png": {
+  "w": 328,
+  "h": 331,
+  "v": "1bf4b10e",
+  "widths": [
+   160,
+   320
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/ozyegin-university.png": {
+  "w": 400,
+  "h": 119,
+  "v": "ef058a98",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/ted-university.png": {
+  "w": 236,
+  "h": 79,
+  "v": "928b9757",
+  "widths": [
+   160,
+   236
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/uskudar-university.png": {
+  "w": 292,
+  "h": 292,
+  "v": "4e8a763c",
+  "widths": [
+   160,
+   292
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/universities/logos/yasar-university.png": {
+  "w": 400,
+  "h": 400,
+  "v": "6cfdbd8b",
+  "widths": [
+   160,
+   320,
+   400
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/requirements/diploma.png": {
+  "w": 256,
+  "h": 256,
+  "v": "49a9fb50",
+  "widths": [
+   96,
+   256
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/requirements/language.png": {
+  "w": 256,
+  "h": 256,
+  "v": "41801347",
+  "widths": [
+   96,
+   256
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/requirements/passport.png": {
+  "w": 256,
+  "h": 256,
+  "v": "39d6602e",
+  "widths": [
+   96,
+   256
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/requirements/photos.png": {
+  "w": 256,
+  "h": 256,
+  "v": "de3ccacd",
+  "widths": [
+   96,
+   256
+  ],
+  "formats": [
+   "webp"
+  ]
+ },
+ "/requirements/school.png": {
+  "w": 256,
+  "h": 256,
+  "v": "32902d18",
+  "widths": [
+   96,
+   256
+  ],
+  "formats": [
+   "webp"
+  ]
+ }
+}
