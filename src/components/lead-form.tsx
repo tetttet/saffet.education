@@ -1,17 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/ru";
+import { saveLead } from "@/lib/leads";
+import { whatsappLink } from "@/lib/site";
 
 /** `fields` are the translated study fields for the dropdown; "Other" is added after them. */
 export function LeadForm({ t, fields }: { t: Dictionary["leadForm"]; fields: string[] }) {
   const [sent, setSent] = useState(false);
+  // WhatsApp link with the filled-in answers, shown when the request could not be saved.
+  const [failed, setFailed] = useState<string | null>(null);
+  const [pending, startTransition] = useTransition();
   const [field, setField] = useState("");
 
-  // TODO: send the request somewhere (Telegram bot / email / CRM). For now it only shows the thank-you card.
+  // Saved as a row on the "Анкеты (реклама)" sheet of the Google Sheet (src/lib/leads.ts).
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    const f = new FormData(e.currentTarget);
+    const get = (k: string) => String(f.get(k) ?? "");
+    const lead = {
+      role: get("role"),
+      name: get("name"),
+      phone: get("phone"),
+      field: field === t.fieldOther ? get("fieldOther") || t.fieldOther : field,
+      budget: get("budget"),
+      locale: document.documentElement.lang,
+      website: get("website"),
+    };
+    setFailed(null);
+    startTransition(async () => {
+      const { ok } = await saveLead("form", lead);
+      if (ok) return setSent(true);
+      const text = [`${t.who} ${lead.role}`, `${t.name}: ${lead.name}`, `${t.phone}: ${lead.phone}`, lead.field && `${t.field}: ${lead.field}`, lead.budget && `${t.budget}: ${lead.budget}`]
+        .filter(Boolean)
+        .join("\n");
+      setFailed(whatsappLink(text));
+    });
   }
 
   if (sent) {
@@ -29,7 +53,7 @@ export function LeadForm({ t, fields }: { t: Dictionary["leadForm"]; fields: str
   }
 
   return (
-    <form onSubmit={onSubmit} className="mt-8 space-y-5 rounded-[24px] bg-white p-5 shadow-card sm:p-7">
+    <form onSubmit={onSubmit} className="relative mt-8 space-y-5 rounded-[24px] bg-white p-5 shadow-card sm:p-7">
       <fieldset>
         <legend className="mb-2 text-[13px] font-semibold text-ink">{t.who}</legend>
         <div className="grid grid-cols-2 gap-2.5">
@@ -64,17 +88,36 @@ export function LeadForm({ t, fields }: { t: Dictionary["leadForm"]; fields: str
         </div>
       </fieldset>
 
+      {/* Honeypot: hidden from people, bots fill it in and their requests are dropped */}
+      <input name="website" tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] size-px opacity-0" />
+
+      {failed && (
+        <p className="rounded-[12px] bg-[#fdecec] px-4 py-3 text-sm text-[#a12a2a]">
+          {t.error}{" "}
+          <a href={failed} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
+            WhatsApp
+          </a>
+        </p>
+      )}
+
       <button
         type="submit"
-        className="flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-brand text-base font-semibold text-white shadow-[0_10px_24px_color-mix(in_srgb,var(--color-brand)_25%,transparent)] transition hover:bg-brand-dark active:scale-[0.98]"
+        disabled={pending}
+        className="flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-brand text-base font-semibold text-white shadow-[0_10px_24px_color-mix(in_srgb,var(--color-brand)_25%,transparent)] transition hover:bg-brand-dark active:scale-[0.98] disabled:cursor-wait disabled:opacity-70"
       >
         {t.submit}
-        <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
+        {pending ? <Spinner /> : (
+          <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        )}
       </button>
     </form>
   );
+}
+
+function Spinner() {
+  return <span className="size-5 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-hidden />;
 }
 
 function Input({ label, ...props }: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) {

@@ -421,9 +421,12 @@ const tr: Dictionary = {
       messagePlaceholder: "Bütçe, not ortalaması, sorular…",
       consent: "Benimle iletişim kurulması için verilerimin kullanılmasını kabul ediyorum",
       submit: "Ücretsiz danışmanlık al",
-      sentTitle: "Neredeyse bitti",
-      sentText: "Talebinizi WhatsApp'tan gönderin, danışman hemen görsün.",
-      sentButton: "WhatsApp'tan gönder",
+      sentTitle: "Talebiniz gönderildi",
+      sentText: "Danışmanımız bir iş günü içinde sizinle iletişime geçecek. Daha hızlı yanıt için bize WhatsApp'tan yazın.",
+      sentButton: "WhatsApp'tan yazın",
+      errorTitle: "Neredeyse bitti",
+      errorText: "Talebiniz site üzerinden gönderilemedi. WhatsApp'tan gönderin, danışman hemen görsün.",
+      errorButton: "WhatsApp'tan gönder",
       msgHeader: "Web sitesi talebi",
       msgInterest: "İlgilendiği",
     },
@@ -452,6 +455,7 @@ const tr: Dictionary = {
     submit: "Başvuruyu gönder",
     sentTitle: "Başvurunuz alındı",
     sentText: "En kısa sürede sizinle iletişime geçeceğiz.",
+    error: "Başvurunuz gönderilemedi. Lütfen tekrar deneyin veya bize WhatsApp'tan yazın.",
   },
 };
 

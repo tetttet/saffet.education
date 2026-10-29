@@ -421,9 +421,12 @@ const zh: Dictionary = {
       messagePlaceholder: "预算、平均成绩、问题……",
       consent: "我同意使用我的信息与我联系",
       submit: "获取免费咨询",
-      sentTitle: "即将完成",
-      sentText: "通过 WhatsApp 发送您的申请，顾问会立即看到。",
-      sentButton: "通过 WhatsApp 发送",
+      sentTitle: "申请已提交",
+      sentText: "顾问会在一个工作日内与您联系。如需更快回复，请通过 WhatsApp 联系我们。",
+      sentButton: "通过 WhatsApp 联系",
+      errorTitle: "即将完成",
+      errorText: "无法通过网站提交申请。请通过 WhatsApp 发送，顾问会立即看到。",
+      errorButton: "通过 WhatsApp 发送",
       msgHeader: "网站申请",
       msgInterest: "感兴趣的",
     },
@@ -452,6 +455,7 @@ const zh: Dictionary = {
     submit: "提交申请",
     sentTitle: "申请已提交",
     sentText: "我们会尽快与您联系。",
+    error: "申请提交失败。请重试或通过 WhatsApp 联系我们。",
   },
 };
 

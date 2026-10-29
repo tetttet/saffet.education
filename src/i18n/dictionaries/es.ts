@@ -421,9 +421,12 @@ const es: Dictionary = {
       messagePlaceholder: "Presupuesto, nota media, preguntas…",
       consent: "Acepto que se usen mis datos para contactarme",
       submit: "Recibir asesoría gratuita",
-      sentTitle: "Casi listo",
-      sentText: "Envía tu solicitud por WhatsApp y un asesor la verá al momento.",
-      sentButton: "Enviar por WhatsApp",
+      sentTitle: "Solicitud enviada",
+      sentText: "Un asesor se pondrá en contacto contigo en un día laborable. Si quieres una respuesta más rápida, escríbenos por WhatsApp.",
+      sentButton: "Escribir por WhatsApp",
+      errorTitle: "Casi listo",
+      errorText: "No pudimos enviar tu solicitud desde la web. Envíala por WhatsApp y un asesor la verá al momento.",
+      errorButton: "Enviar por WhatsApp",
       msgHeader: "Solicitud desde la web",
       msgInterest: "Interesado en",
     },
@@ -452,6 +455,7 @@ const es: Dictionary = {
     submit: "Enviar solicitud",
     sentTitle: "Solicitud enviada",
     sentText: "Nos pondremos en contacto contigo pronto.",
+    error: "No pudimos enviar tu solicitud. Inténtalo de nuevo o escríbenos por WhatsApp.",
   },
 };
 

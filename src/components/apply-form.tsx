@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/ru";
+import { saveLead } from "@/lib/leads";
 import { whatsappLink } from "@/lib/site";
 
 type Props = {
@@ -14,22 +15,36 @@ type Props = {
 };
 
 export function ApplyForm({ interest, t, levels, defaultLevel, unis }: Props) {
-  const [sent, setSent] = useState<null | string>(null);
+  // After sending: whether the request reached the sheet, and a WhatsApp link with the same text either way.
+  const [sent, setSent] = useState<null | { ok: boolean; whatsapp: string }>(null);
+  const [pending, startTransition] = useTransition();
 
-  // TODO: send to a backend (Telegram bot / email / CRM). For now the request
-  // is turned into a WhatsApp message so no lead is lost.
+  // Saved as a row on the "Заявки с сайта" sheet of the Google Sheet (src/lib/leads.ts).
+  // If that fails, the request goes out as a WhatsApp message instead, so no lead is lost.
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
+    const get = (k: string) => String(f.get(k) ?? "");
     const text = [
       t.msgHeader,
-      `${t.name}: ${f.get("name")}`,
-      `${t.phone}: ${f.get("phone")}`,
-      `${t.level}: ${f.get("degree")}`,
-      f.get("interest") && `${t.msgInterest}: ${f.get("interest")}`,
-      f.get("message") && `${t.message}: ${f.get("message")}`,
+      `${t.name}: ${get("name")}`,
+      `${t.phone}: ${get("phone")}`,
+      `${t.level}: ${get("degree")}`,
+      get("interest") && `${t.msgInterest}: ${get("interest")}`,
+      get("message") && `${t.message}: ${get("message")}`,
     ].filter(Boolean).join("\n");
-    setSent(whatsappLink(text));
+    startTransition(async () => {
+      const { ok } = await saveLead("site", {
+        name: get("name"),
+        phone: get("phone"),
+        level: get("degree"),
+        interest: get("interest"),
+        message: get("message"),
+        locale: document.documentElement.lang,
+        website: get("website"),
+      });
+      setSent({ ok, whatsapp: whatsappLink(text) });
+    });
   }
 
   if (sent) {
@@ -40,17 +55,17 @@ export function ApplyForm({ interest, t, levels, defaultLevel, unis }: Props) {
             <path d="m5 12 5 5L20 7" />
           </svg>
         </div>
-        <h2 className="mt-5 font-display text-2xl font-bold">{t.sentTitle}</h2>
-        <p className="mt-2 text-muted">{t.sentText}</p>
-        <a href={sent} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex h-12 items-center rounded-[9px] bg-[#1da851] px-7 font-semibold text-white transition hover:bg-[#178f45]">
-          {t.sentButton}
+        <h2 className="mt-5 font-display text-2xl font-bold">{sent.ok ? t.sentTitle : t.errorTitle}</h2>
+        <p className="mt-2 text-muted">{sent.ok ? t.sentText : t.errorText}</p>
+        <a href={sent.whatsapp} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex h-12 items-center rounded-[9px] bg-[#1da851] px-7 font-semibold text-white transition hover:bg-[#178f45]">
+          {sent.ok ? t.sentButton : t.errorButton}
         </a>
       </div>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4 rounded-[20px] bg-[#f3f5f9] p-5 sm:p-8">
+    <form onSubmit={onSubmit} className="relative space-y-4 rounded-[20px] bg-[#f3f5f9] p-5 sm:p-8">
       <div className="pb-2">
         <h2 className="font-display text-lg font-bold text-ink sm:text-2xl">{t.title}</h2>
         <p className="mt-1.5 text-sm text-muted">{t.note}</p>
@@ -90,8 +105,15 @@ export function ApplyForm({ interest, t, levels, defaultLevel, unis }: Props) {
         <input type="checkbox" required className="mt-0.5 size-[18px] shrink-0 accent-brand" />
         {t.consent}
       </label>
-      <button type="submit" className="flex h-[52px] w-full cursor-pointer items-center justify-center rounded-[9px] bg-brand text-[15px] font-semibold text-white transition-colors hover:bg-brand-dark">
+      {/* Honeypot: hidden from people, bots fill it in and their requests are dropped */}
+      <input name="website" tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] size-px opacity-0" />
+      <button
+        type="submit"
+        disabled={pending}
+        className="flex h-[52px] w-full cursor-pointer items-center justify-center gap-2 rounded-[9px] bg-brand text-[15px] font-semibold text-white transition-colors hover:bg-brand-dark disabled:cursor-wait disabled:opacity-70"
+      >
         {t.submit}
+        {pending && <span className="size-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-hidden />}
       </button>
     </form>
   );

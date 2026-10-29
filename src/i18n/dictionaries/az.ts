@@ -421,9 +421,12 @@ const az: Dictionary = {
       messagePlaceholder: "Büdcə, orta bal, suallar…",
       consent: "Mənimlə əlaqə üçün məlumatlarımın işlənməsinə razıyam",
       submit: "Məsləhət al",
-      sentTitle: "Az qaldı",
-      sentText: "Müraciəti WhatsApp-a göndərin, məsləhətçi onu dərhal görəcək.",
-      sentButton: "WhatsApp-a göndər",
+      sentTitle: "Müraciət göndərildi",
+      sentText: "Məsləhətçi bir iş günü ərzində sizinlə əlaqə saxlayacaq. Daha tez cavab üçün bizə WhatsApp-da yazın.",
+      sentButton: "WhatsApp-da yazın",
+      errorTitle: "Az qaldı",
+      errorText: "Müraciəti sayt vasitəsilə göndərmək alınmadı. Onu WhatsApp-a göndərin, məsləhətçi dərhal görəcək.",
+      errorButton: "WhatsApp-a göndər",
       msgHeader: "Saytdan müraciət",
       msgInterest: "Maraqlanır",
     },
@@ -452,6 +455,7 @@ const az: Dictionary = {
     submit: "Müraciət göndər",
     sentTitle: "Müraciət göndərildi",
     sentText: "Tezliklə sizinlə əlaqə saxlayacağıq.",
+    error: "Müraciəti göndərmək alınmadı. Yenidən cəhd edin və ya bizə WhatsApp-da yazın.",
   },
 };
 

@@ -421,9 +421,12 @@ const fr: Dictionary = {
       messagePlaceholder: "Budget, moyenne, questions…",
       consent: "J'accepte que mes données soient utilisées pour me contacter",
       submit: "Obtenir un conseil gratuit",
-      sentTitle: "Presque fini",
-      sentText: "Envoyez votre demande sur WhatsApp et un conseiller la verra tout de suite.",
-      sentButton: "Envoyer sur WhatsApp",
+      sentTitle: "Demande envoyée",
+      sentText: "Un conseiller vous contactera dans un délai d'un jour ouvré. Pour une réponse plus rapide, écrivez-nous sur WhatsApp.",
+      sentButton: "Écrire sur WhatsApp",
+      errorTitle: "Presque fini",
+      errorText: "Votre demande n'a pas pu être envoyée depuis le site. Envoyez-la sur WhatsApp et un conseiller la verra tout de suite.",
+      errorButton: "Envoyer sur WhatsApp",
       msgHeader: "Demande depuis le site",
       msgInterest: "Intéressé par",
     },
@@ -452,6 +455,7 @@ const fr: Dictionary = {
     submit: "Envoyer la demande",
     sentTitle: "Demande envoyée",
     sentText: "Nous vous contacterons très bientôt.",
+    error: "Votre demande n'a pas pu être envoyée. Réessayez ou écrivez-nous sur WhatsApp.",
   },
 };
 

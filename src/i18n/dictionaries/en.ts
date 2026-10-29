@@ -421,9 +421,12 @@ const en: Dictionary = {
       messagePlaceholder: "Budget, grade average, questions…",
       consent: "I agree to my data being used to contact me",
       submit: "Get free advice",
-      sentTitle: "Almost done",
-      sentText: "Send your request on WhatsApp and an advisor will see it right away.",
-      sentButton: "Send on WhatsApp",
+      sentTitle: "Request sent",
+      sentText: "An advisor will contact you within a working day. If you'd like a faster answer, message us on WhatsApp.",
+      sentButton: "Message us on WhatsApp",
+      errorTitle: "Almost done",
+      errorText: "We couldn't send your request through the site. Send it on WhatsApp and an advisor will see it right away.",
+      errorButton: "Send on WhatsApp",
       msgHeader: "Website request",
       msgInterest: "Interested in",
     },
@@ -452,6 +455,7 @@ const en: Dictionary = {
     submit: "Send request",
     sentTitle: "Request sent",
     sentText: "We will contact you shortly.",
+    error: "We couldn't send your request. Please try again or message us on WhatsApp.",
   },
 };
 
