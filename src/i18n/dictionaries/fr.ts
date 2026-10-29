@@ -40,9 +40,9 @@ const fr: Dictionary = {
   },
   whatsapp: {
     label: "Écrire sur WhatsApp",
-    hello: "Bonjour ! J'aimerais en savoir plus sur les études en Turquie.",
-    aboutProgram: "Bonjour ! Le programme {program} à {uni} m'intéresse.",
-    aboutUni: "Bonjour ! J'aimerais étudier à {uni}.",
+    hello: "Bonjour, je souhaite étudier dans une université en Turquie et trouver un programme qui me convient. Pourriez-vous me dire quels documents sont nécessaires et combien coûtent les études ?",
+    aboutProgram: "Bonjour, le programme {program} à {uni} m'intéresse. Pourriez-vous m'indiquer les conditions d'admission, les frais et les dates limites de candidature ?",
+    aboutUni: "Bonjour, je souhaite intégrer {uni}. Pourriez-vous me dire quels programmes sont proposés et combien coûtent les études ?",
   },
   common: {
     perYear: "/an",

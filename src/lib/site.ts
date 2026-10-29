@@ -3,8 +3,8 @@ export const site = {
   name: "Saffet Education",
   // Public address used in canonical links, hreflang, Open Graph and the sitemap.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://saffet.education",
-  phone: "+90 500 000 00 00",
-  whatsapp: "905000000000",
+  phone: "+90 541 747 34 33",
+  whatsapp: "905417473433",
   email: "info@saffet.education",
   instagram: "https://instagram.com/",
   telegram: "https://t.me/",

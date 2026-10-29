@@ -40,9 +40,9 @@ const zh: Dictionary = {
   },
   whatsapp: {
     label: "WhatsApp 咨询",
-    hello: "您好！我想了解在土耳其留学的信息。",
-    aboutProgram: "您好！我对 {uni} 的 {program} 专业感兴趣。",
-    aboutUni: "您好！我想去 {uni} 读书。",
+    hello: "您好，我想去土耳其的大学留学，并选择适合自己的专业。请问需要准备哪些材料，学费是多少？",
+    aboutProgram: "您好，我对{uni}的{program}专业很感兴趣。请问入学要求、学费和申请截止日期是怎样的？",
+    aboutUni: "您好，我想申请{uni}。请问有哪些专业可以选择，学费是多少？",
   },
   common: {
     perYear: "/年",

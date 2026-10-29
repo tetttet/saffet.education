@@ -40,9 +40,9 @@ const az: Dictionary = {
   },
   whatsapp: {
     label: "WhatsApp-da yazın",
-    hello: "Salam! Türkiyədə təhsil haqqında məlumat almaq istəyirəm.",
-    aboutProgram: "Salam! {uni} universitetində {program} proqramı ilə maraqlanıram.",
-    aboutUni: "Salam! {uni} universitetinə qəbul ilə maraqlanıram.",
+    hello: "Salam, Türkiyədə universitetə qəbul olmaq və mənə uyğun proqram seçmək istəyirəm. Hansı sənədlərin lazım olduğunu və təhsil haqqının nə qədər olduğunu deyə bilərsinizmi?",
+    aboutProgram: "Salam, {uni} universitetində {program} proqramı ilə maraqlanıram. Qəbul şərtlərini, təhsil haqqını və sənəd təqdimetmə müddətlərini deyə bilərsinizmi?",
+    aboutUni: "Salam, {uni} universitetinə qəbul olmaq istəyirəm. Hansı proqramların olduğunu və təhsil haqqının nə qədər olduğunu deyə bilərsinizmi?",
   },
   common: {
     perYear: "/il",
