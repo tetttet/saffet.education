@@ -27,6 +27,7 @@ const es: Dictionary = {
     noticeTitle: "Ten en cuenta",
     notice: "Saffet Education es una agencia educativa privada. La información de este sitio es orientativa: las condiciones de admisión y las tasas las fija cada universidad.",
     tagline: "Estudiar en Turquía, sin complicaciones. Encontramos tu programa, tramitamos tus documentos y te ayudamos con la mudanza: gratis para estudiantes.",
+    about: "Saffet Education ayuda a estudiantes de todo el mundo a entrar en universidades de Turquía: desde elegir el programa y preparar los documentos hasta la carta de admisión, el visado y el permiso de residencia. Trabajamos con universidades públicas y privadas de Estambul, Ankara, Esmirna y otras ciudades.",
     search: "Buscar",
     allPrograms: "Todos los programas",
     english: "Impartidos en inglés",

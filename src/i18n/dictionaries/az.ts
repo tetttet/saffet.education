@@ -27,6 +27,7 @@ const az: Dictionary = {
     noticeTitle: "Diqqət",
     notice: "Saffet Education özəl təhsil agentliyidir. Saytdakı məlumat istinad xarakterlidir: qəbul şərtlərini və qiyməti son olaraq universitet müəyyən edir.",
     tagline: "Türkiyədə təhsil artıq addımlar olmadan. Proqram seçirik, sənədləri təqdim edirik və köçməyə kömək edirik — tələbə üçün pulsuz.",
+    about: "Saffet Education dünyanın müxtəlif ölkələrindən olan tələbələrə Türkiyə universitetlərinə qəbul olmağa kömək edir: proqram seçimi və sənədlərin hazırlanmasından qəbul məktubu, viza və yaşayış icazəsinə qədər. İstanbul, Ankara, İzmir və digər şəhərlərin dövlət və özəl universitetləri ilə işləyirik.",
     search: "Axtarış",
     allPrograms: "Bütün proqramlar",
     english: "İngilis dilində",

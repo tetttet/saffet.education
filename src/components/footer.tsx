@@ -9,7 +9,8 @@ import { site, whatsappLink } from "@/lib/site";
 export async function Footer() {
   const { t, locale, href } = await getI18n();
   const h = t.home;
-  const columns = [
+  const linkClass = "block max-w-70 text-[14px] leading-tight text-[#3a3a3a] transition-opacity hover:opacity-70";
+  const columns: { title: string; links: { href: string; label: string; external?: boolean }[] }[] = [
     {
       title: t.footer.explore,
       links: [
@@ -17,6 +18,9 @@ export async function Footer() {
         { href: href("/universities"), label: t.nav.universities },
         { href: href("/programs?language=English"), label: t.footer.english },
         { href: href("/programs?degree=Master%27s+Degree"), label: t.footer.masters },
+        { href: href("/#how"), label: t.nav.how },
+        { href: href("/#faq"), label: t.footer.faq },
+        { href: href("/apply"), label: t.footer.apply },
       ],
     },
     {
@@ -24,11 +28,13 @@ export async function Footer() {
       links: Object.entries(t.labels.city).map(([en, name]) => ({ href: href(`/universities?city=${en}`), label: name })),
     },
     {
-      title: t.footer.students,
+      title: t.footer.contacts,
       links: [
-        { href: href("/#how"), label: t.nav.how },
-        { href: href("/#faq"), label: t.footer.faq },
-        { href: href("/apply"), label: t.footer.apply },
+        { href: `tel:${site.phone.replace(/\s/g, "")}`, label: site.phone, external: true },
+        { href: whatsappLink(t.whatsapp.hello), label: "WhatsApp", external: true },
+        { href: site.telegram, label: "Telegram", external: true },
+        { href: site.instagram, label: "Instagram", external: true },
+        { href: `mailto:${site.email}`, label: site.email, external: true },
       ],
     },
   ];
@@ -93,47 +99,48 @@ export async function Footer() {
         </div>
       </section>
 
-      <footer className="mt-14 border-t border-ink/10 bg-[#f3f5f9] text-ink sm:mt-20">
-        <div className="mx-auto max-w-[1380px] px-4 sm:px-8 lg:px-16">
-          <div className="grid gap-10 py-14 md:grid-cols-[1.6fr_repeat(4,1fr)]">
-            <div className="space-y-5">
-              <Logo href={href("/")} />
-              <p className="max-w-xs text-[13px] leading-relaxed text-muted">{t.footer.tagline}</p>
-            </div>
-            {columns.map((col) => (
-              <div key={col.title}>
-                <h3 className="mb-4 text-[13px] font-semibold text-ink">{col.title}</h3>
-                <ul className="space-y-2.5 text-[13px] text-muted">
-                  {col.links.map((l) => (
-                    <li key={l.href}>
-                      <Link href={l.href} className="transition hover:text-brand">{l.label}</Link>
-                    </li>
-                  ))}
-                </ul>
+      {/* Footer laid out like 4pupils: logo + tagline and fine print on the left, three link columns on the right. */}
+      <footer className="mt-14 w-full bg-[#f0f0f0] text-[#2f2f2f] sm:mt-20">
+        <div className="mx-auto max-w-[1380px] px-4 pt-14 pb-16 sm:px-8 lg:px-16">
+          <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-20">
+            <div className="flex h-full max-w-180 flex-col">
+              <div className="space-y-3">
+                <Logo href={href("/")} />
+                <p className="max-w-sm text-[12px] leading-snug text-[#8b8b8b]">{t.footer.tagline}</p>
               </div>
-            ))}
-            <div>
-              <h3 className="mb-4 text-[13px] font-semibold text-ink">{t.footer.contacts}</h3>
-              <ul className="space-y-2.5 text-[13px] text-muted">
-                <li><a className="transition hover:text-brand" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a></li>
-                <li><a className="transition hover:text-brand" href={whatsappLink(t.whatsapp.hello)} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-                <li><a className="transition hover:text-brand" href={site.telegram} target="_blank" rel="noopener noreferrer">Telegram</a></li>
-                <li><a className="transition hover:text-brand" href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                <li><a className="transition hover:text-brand" href={`mailto:${site.email}`}>{site.email}</a></li>
-              </ul>
+
+              <div className="mt-auto max-w-160 space-y-6 pt-10 text-[11px] leading-[1.45] text-[#444]">
+                <p>{t.footer.about}</p>
+                <p>
+                  <b className="font-semibold">{t.footer.noticeTitle}.</b> {t.footer.notice} {t.footer.note} © 2026 {site.name}.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Notice */}
-          <div className="border-t border-ink/10 py-6">
-            <p className="max-w-4xl text-xs leading-relaxed text-muted">
-              <b className="font-semibold text-ink">{t.footer.noticeTitle}.</b> {t.footer.notice} {t.footer.note}
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-2 border-t border-ink/10 py-6 text-xs text-muted sm:flex-row sm:justify-between">
-            <span>© {site.name}</span>
-            <a className="transition hover:text-brand" href={`mailto:${site.email}`}>{site.email}</a>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3">
+              {columns.map((col) => (
+                <div key={col.title} className="min-w-0">
+                  <h3 className="mb-6 text-[16px] leading-none font-medium text-[#7d7d7d]">{col.title}</h3>
+                  <ul className="space-y-3">
+                    {col.links.map((l) => (
+                      <li key={l.href}>
+                        {l.external ? (
+                          <a
+                            href={l.href}
+                            className={`${linkClass} break-words`}
+                            {...(l.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
+                          >
+                            {l.label}
+                          </a>
+                        ) : (
+                          <Link href={l.href} className={linkClass}>{l.label}</Link>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </footer>

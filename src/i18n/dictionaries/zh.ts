@@ -27,6 +27,7 @@ const zh: Dictionary = {
     noticeTitle: "请注意",
     notice: "Saffet Education 是一家私营留学服务机构。本网站信息仅供参考：录取条件和学费由各大学自行确定。",
     tagline: "留学土耳其，从此简单。我们帮您找专业、办材料、安排落地 —— 对学生完全免费。",
+    about: "Saffet Education 帮助来自世界各地的学生进入土耳其大学：从选择专业、准备材料，到录取通知书、签证和居留许可，全程协助。我们与伊斯坦布尔、安卡拉、伊兹密尔等城市的公立和私立大学合作。",
     search: "搜索",
     allPrograms: "全部专业",
     english: "英语授课",

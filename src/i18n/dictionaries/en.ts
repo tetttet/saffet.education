@@ -27,6 +27,7 @@ const en: Dictionary = {
     noticeTitle: "Please note",
     notice: "Saffet Education is a private education agency. Information on this site is for guidance only: admission terms and fees are set by each university.",
     tagline: "Studying in Türkiye made simple. We find your programme, file your documents and help you move — free for students.",
+    about: "Saffet Education helps students from all over the world get into universities in Türkiye: from choosing a programme and preparing documents to the acceptance letter, visa and residence permit. We work with public and private universities in Istanbul, Ankara, Izmir and other cities.",
     search: "Search",
     allPrograms: "All programmes",
     english: "Taught in English",

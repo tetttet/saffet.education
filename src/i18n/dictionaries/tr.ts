@@ -27,6 +27,7 @@ const tr: Dictionary = {
     noticeTitle: "Lütfen dikkat",
     notice: "Saffet Education özel bir eğitim danışmanlık şirketidir. Bu sitedeki bilgiler yalnızca bilgilendirme amaçlıdır: kabul koşullarını ve ücretleri her üniversite kendisi belirler.",
     tagline: "Türkiye'de eğitim artık kolay. Programınızı buluyor, belgelerinizi hazırlıyor ve taşınmanıza yardım ediyoruz — öğrenciler için ücretsiz.",
+    about: "Saffet Education, dünyanın dört bir yanından öğrencilerin Türkiye'deki üniversitelere girmesine yardımcı olur: program seçimi ve belge hazırlığından kabul mektubuna, vizeye ve ikamet iznine kadar. İstanbul, Ankara, İzmir ve diğer şehirlerdeki devlet ve vakıf üniversiteleriyle çalışıyoruz.",
     search: "Arama",
     allPrograms: "Tüm programlar",
     english: "İngilizce eğitim",

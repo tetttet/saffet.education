@@ -27,6 +27,7 @@ const fr: Dictionary = {
     noticeTitle: "À noter",
     notice: "Saffet Education est une agence éducative privée. Les informations de ce site sont données à titre indicatif : les conditions d'admission et les frais sont fixés par chaque université.",
     tagline: "Étudier en Turquie en toute simplicité. Nous trouvons votre programme, constituons votre dossier et vous aidons à vous installer — gratuitement pour les étudiants.",
+    about: "Saffet Education aide les étudiants du monde entier à intégrer une université en Turquie : du choix du programme et de la préparation du dossier jusqu'à la lettre d'admission, au visa et au titre de séjour. Nous travaillons avec des universités publiques et privées à Istanbul, Ankara, Izmir et dans d'autres villes.",
     search: "Recherche",
     allPrograms: "Tous les programmes",
     english: "Enseignés en anglais",
