@@ -447,6 +447,20 @@
    "webp"
   ]
  },
+ "/universities/istanbul-kent-university.jpg": {
+  "w": 745,
+  "h": 451,
+  "v": "1b0a5c9a",
+  "widths": [
+   400,
+   640,
+   745
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
  "/universities/istanbul-kultur-university.jpg": {
   "w": 1000,
   "h": 680,
@@ -558,6 +572,22 @@
    640,
    960,
    1200
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "/universities/ostim-technical-university.jpg": {
+  "w": 1556,
+  "h": 413,
+  "v": "42e7e961",
+  "widths": [
+   400,
+   640,
+   960,
+   1280,
+   1556
   ],
   "formats": [
    "avif",

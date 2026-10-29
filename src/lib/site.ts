@@ -7,7 +7,6 @@ export const site = {
   whatsapp: "905417473433",
   email: "info@saffet.education",
   instagram: "https://instagram.com/",
-  telegram: "https://t.me/",
   // City photos in /public/cities (free photos from Unsplash). Cities missing here get a drawn cover.
   cityImages: {
     Istanbul: "/cities/istanbul.jpg",

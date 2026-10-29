@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { ApplyForm } from "@/components/apply-form";
+import { IconInstagram } from "@/components/icons";
 import { getI18n } from "@/i18n/server";
 import { getProgram, getUniversity, universities } from "@/lib/data";
 import { label } from "@/lib/format";
@@ -62,7 +63,7 @@ export default async function ApplyPage({ searchParams }: PageProps<"/[lang]/app
               href={whatsappLink(t.whatsapp.hello)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-10 items-center gap-2 rounded-[9px] bg-[#1da851] px-5 text-sm font-semibold text-white transition hover:bg-[#178f45]"
+              className="inline-flex h-10 items-center gap-2 rounded-[9px] bg-[#25d366] px-5 text-sm font-semibold text-white transition hover:bg-[#1fbe5b]"
             >
               <svg viewBox="0 0 24 24" className="size-[18px]" fill="currentColor" aria-hidden>
                 <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z" />
@@ -70,12 +71,13 @@ export default async function ApplyPage({ searchParams }: PageProps<"/[lang]/app
               WhatsApp
             </a>
             <a
-              href={site.telegram}
+              href={site.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-10 items-center rounded-[9px] border border-ink/15 px-5 text-sm font-semibold text-ink transition hover:border-ink/35"
+              className="inline-flex h-10 items-center gap-2 rounded-[9px] bg-linear-to-tr from-[#f9a825] via-[#e1306c] to-[#833ab4] px-5 text-sm font-semibold text-white transition hover:brightness-110"
             >
-              Telegram
+              <IconInstagram className="size-[18px]" />
+              Instagram
             </a>
             <a href={`mailto:${site.email}`} className="text-sm font-semibold text-ink underline decoration-ink/25 underline-offset-4 transition hover:text-brand hover:decoration-brand">
               {site.email}

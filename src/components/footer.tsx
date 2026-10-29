@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IconInstagram, IconMail, IconPhone, IconWhatsApp } from "./icons";
 import { Logo } from "./logo";
 import { CountUp } from "./motion";
 import { getI18n } from "@/i18n/server";
@@ -10,7 +11,7 @@ export async function Footer() {
   const { t, locale, href } = await getI18n();
   const h = t.home;
   const linkClass = "block max-w-70 text-[14px] leading-tight text-[#3a3a3a] transition-opacity hover:opacity-70";
-  const columns: { title: string; links: { href: string; label: string; external?: boolean }[] }[] = [
+  const columns: { title: string; links: { href: string; label: string; external?: boolean; icon?: React.ReactNode }[] }[] = [
     {
       title: t.footer.explore,
       links: [
@@ -30,11 +31,10 @@ export async function Footer() {
     {
       title: t.footer.contacts,
       links: [
-        { href: `tel:${site.phone.replace(/\s/g, "")}`, label: site.phone, external: true },
-        { href: whatsappLink(t.whatsapp.hello), label: "WhatsApp", external: true },
-        { href: site.telegram, label: "Telegram", external: true },
-        { href: site.instagram, label: "Instagram", external: true },
-        { href: `mailto:${site.email}`, label: site.email, external: true },
+        { href: `tel:${site.phone.replace(/\s/g, "")}`, label: site.phone, external: true, icon: <IconPhone className="size-[18px] text-ink-600" /> },
+        { href: whatsappLink(t.whatsapp.hello), label: "WhatsApp", external: true, icon: <IconWhatsApp className="size-[18px] text-[#25d366]" /> },
+        { href: site.instagram, label: "Instagram", external: true, icon: <IconInstagram className="size-[18px] text-[#e1306c]" /> },
+        { href: `mailto:${site.email}`, label: site.email, external: true, icon: <IconMail className="size-[18px] text-ink-600" /> },
       ],
     },
   ];
@@ -127,10 +127,11 @@ export async function Footer() {
                         {l.external ? (
                           <a
                             href={l.href}
-                            className={`${linkClass} break-words`}
+                            className={`${l.icon ? linkClass.replace("block", "flex items-center gap-2.5") : linkClass} break-words`}
                             {...(l.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
                           >
-                            {l.label}
+                            {l.icon && <span className="shrink-0">{l.icon}</span>}
+                            <span className="min-w-0">{l.label}</span>
                           </a>
                         ) : (
                           <Link href={l.href} className={linkClass}>{l.label}</Link>

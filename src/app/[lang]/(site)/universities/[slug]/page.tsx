@@ -358,7 +358,7 @@ function University({ slug, i18n }: { slug: string; i18n: I18n }) {
                 href={whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#22bf5c] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#1da851]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25d366] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#1fbe5b]"
               >
                 <WhatsAppIcon />
                 {dict.program.askWhatsapp}

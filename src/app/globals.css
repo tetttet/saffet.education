@@ -405,6 +405,9 @@ select.field {
 .mega-panel[data-open] { transition-delay: 0s; }
 .mega-item { opacity: 0; transform: translateY(8px); transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
 .mega-panel[data-open] .mega-item { opacity: 1; transform: none; transition-delay: var(--d, 0s); }
+/* Switching study level in the menu: the new programmes fade in instead of popping. */
+@keyframes mega-swap { from { opacity: 0; transform: translateY(4px); } }
+.mega-swap { animation: mega-swap 0.25s ease; }
 
 /* Numbered points: a glowing line sweeps in from the left over each point in turn, then slides out to the right.
    A full pass over the four points takes 8s; each point starts 2s after the previous one. */
@@ -428,30 +431,35 @@ select.field {
   .perk-line { display: none; }
 }
 
-/* Field drawings: each stroke draws itself, holds most of the time, then wipes away and starts again (8s loop).
-   Strokes use pathLength=1, so dash values of 1 cover any path. */
+/* Field drawings, stop-motion style: each stroke draws itself in visible jumps (steps, like frames of hand animation),
+   holds most of the 8s loop, then is wiped away in a few jumps and starts again.
+   Strokes use pathLength=1, so dash values of 1 cover any path. The line wobble comes from the SVG filter in field-art.tsx. */
 @keyframes art-draw {
   /* Opacity hides the dot that a round line cap leaves while the stroke is empty. */
-  0% { stroke-dashoffset: 1; opacity: 0; }
-  2% { opacity: 1; }
-  20%, 88% { stroke-dashoffset: 0; }
-  96% { opacity: 1; }
-  98%, 100% { stroke-dashoffset: -1; opacity: 0; }
+  0% { stroke-dashoffset: 1; opacity: 0; animation-timing-function: steps(1, end); }
+  1% { stroke-dashoffset: 1; opacity: 1; animation-timing-function: steps(7, end); }
+  16%, 88% { stroke-dashoffset: 0; animation-timing-function: steps(4, end); }
+  95% { stroke-dashoffset: -1; opacity: 1; animation-timing-function: steps(1, end); }
+  96%, 100% { stroke-dashoffset: -1; opacity: 0; }
 }
+/* Colour patches pop in with a small overshoot and drop out in one frame. */
 @keyframes art-fill {
-  0%, 12% { opacity: 0; }
-  30%, 86% { opacity: 1; }
-  96%, 100% { opacity: 0; }
+  0%, 13% { opacity: 0; transform: scale(0.9); }
+  15% { opacity: 1; transform: scale(1.04); }
+  17%, 87% { opacity: 1; transform: scale(1); }
+  88%, 100% { opacity: 0; transform: scale(1); }
 }
 @keyframes art-blink { 50% { opacity: 0; } }
-.art-fill { animation: art-fill 8s ease-in-out infinite; animation-delay: var(--d, 0s); }
-.art-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: art-draw 8s cubic-bezier(0.65, 0, 0.35, 1) infinite; animation-delay: var(--d, 0s); }
-.art-spin { transform-box: fill-box; transform-origin: center; animation: spin-slow 14s linear infinite; }
-.art-spin-reverse { animation-direction: reverse; animation-duration: 9s; }
+.art-fill { transform-box: fill-box; transform-origin: center; animation: art-fill 8s steps(1, end) infinite backwards; animation-delay: var(--d, 0s); }
+.art-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: art-draw 8s infinite backwards; animation-delay: var(--d, 0s); }
+/* Gears turn like a clock hand: a short jump, then a pause. */
+.art-tick { transform-box: fill-box; transform-origin: center; animation: spin-slow 12s steps(48) infinite; }
+.art-tick-reverse { animation-direction: reverse; animation-duration: 7s; animation-timing-function: steps(28); }
 .art-blink { animation: art-blink 1s steps(1) infinite; }
 @media (prefers-reduced-motion: reduce) {
   .art-draw { animation: none !important; stroke-dashoffset: 0; }
-  .art-fill { animation: none !important; }
+  .art-fill, .art-tick { animation: none !important; }
+  .art-boil { filter: none !important; }
 }
 
 /* Promo banners: the stars twinkle and the sparkle turns slowly on the dark banner. */

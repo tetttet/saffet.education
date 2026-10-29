@@ -430,7 +430,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
                   href={whatsappLink(fill(dict.whatsapp.aboutProgram, { program: p.name, uni: p.uniName }))}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#22bf5c] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#1da851] w-full"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25d366] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#1fbe5b] w-full"
                 >
                   <WhatsAppIcon />
                   {t.askWhatsapp}
@@ -456,7 +456,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
                 href={whatsappLink(fill(dict.whatsapp.aboutProgram, { program: p.name, uni: p.uniName }))}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#22bf5c] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#1da851]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25d366] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#1fbe5b]"
               >
                 <WhatsAppIcon />
                 {t.askWhatsapp}

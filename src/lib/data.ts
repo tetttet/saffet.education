@@ -134,6 +134,25 @@ export type ProgramQuery = {
 export const PAGE_SIZE = 24;
 
 // Matches the English name, the name in the page language and the university.
+/** FNV-1a hash, enough to scatter ids evenly. */
+function hash(s: string) {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 0x01000193);
+  return h >>> 0;
+}
+
+/** Partner universities shown ahead of the rest in the default order. */
+const PRIORITY_UNIS = new Set(["uskudar-university", "istanbul-medipol-university", "fenerbahce-university", "istanbul-kent-university"]);
+
+/** Mixes universities together instead of listing them one block after another.
+ *  Bachelor's programs come first as the most sought after, partner universities first within each group.
+ *  The order is fixed (no clock or randomness), so paging stays consistent and the page can be prerendered. */
+function shuffled(list: Program[]) {
+  const key = new Map(list.map((p) => [p.id, hash(p.id)]));
+  const rank = (p: Program) => Number(p.degree === "Bachelor's Degree") * 2 + Number(PRIORITY_UNIS.has(p.uni));
+  return list.sort((a, b) => rank(b) - rank(a) || key.get(a.id)! - key.get(b.id)!);
+}
+
 export function searchPrograms(query: ProgramQuery, locale: Locale) {
   const q = query.q?.trim().toLocaleLowerCase();
   const max = Number(query.max) || null;
@@ -154,6 +173,7 @@ export function searchPrograms(query: ProgramQuery, locale: Locale) {
   if (query.sort === "fee-asc") list = list.sort(byFee(1));
   else if (query.sort === "fee-desc") list = list.sort(byFee(-1));
   else if (query.sort === "name") list = list.sort((a, b) => programName(a.name, locale).localeCompare(programName(b.name, locale), locale));
+  else list = shuffled(list);
 
   const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
   const page = Math.min(Math.max(1, Number(query.page) || 1), pages);
@@ -165,18 +185,31 @@ export function searchPrograms(query: ProgramQuery, locale: Locale) {
   };
 }
 
-/** One open English bachelor's per popular field, biggest discount first, each from a different university. */
-export function featuredPrograms() {
+/** Four programmes of one level: an open English one per popular field, biggest discount first, each from a different university.
+ *  Levels with few such programmes are topped up from any field and language, still one per university. */
+export function featuredPrograms(degree = "Bachelor's Degree", count = 4) {
   const fields = ["Medicine & Health", "Computer Science & IT", "Engineering", "Business & Management"];
+  const best = (a: Program, b: Program) => (b.discount ?? 0) - (a.discount ?? 0) || a.fee! - b.fee!;
   const used = new Set<string>();
-  return fields.flatMap((field) => {
+  const picks = fields.flatMap((field) => {
     const pick = programs
-      .filter((p) => p.field === field && p.open && p.fee && p.language === "English" && p.degree === "Bachelor's Degree" && !used.has(p.uni))
-      .sort((a, b) => (b.discount ?? 0) - (a.discount ?? 0) || a.fee! - b.fee!)[0];
+      .filter((p) => p.field === field && p.open && p.fee && p.language === "English" && p.degree === degree && !used.has(p.uni))
+      .sort(best)[0];
     if (!pick) return [];
     used.add(pick.uni);
     return [pick];
   });
+  const rest = programs.filter((p) => p.degree === degree && p.fee).sort((a, b) => Number(b.open) - Number(a.open) || best(a, b));
+  // First pass keeps the fields varied, the second lets them repeat if that is all there is.
+  for (const newField of [true, false]) {
+    for (const p of rest) {
+      if (picks.length >= count) break;
+      if (used.has(p.uni) || (newField && picks.some((x) => x.field === p.field))) continue;
+      used.add(p.uni);
+      picks.push(p);
+    }
+  }
+  return picks.slice(0, count);
 }
 
 export function similarPrograms(p: Program, limit = 6) {
