@@ -43,7 +43,7 @@ type Strings = {
   view: string;
 };
 
-type Query = { q: string; city: string; type: string; sort: string };
+type Query = { q: string; city: string[]; type: string; sort: string };
 
 const icon = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.75, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true } as const;
 const Search = (p: SVGProps<SVGSVGElement>) => <svg {...icon} {...p}><circle cx="11" cy="11" r="6.5" /><path d="m16 16 4 4" /></svg>;
@@ -59,7 +59,9 @@ const Chevron = (p: SVGProps<SVGSVGElement>) => <svg {...icon} {...p}><path d="m
  */
 export function UniversityBrowser({ unis, cities, initial, s }: { unis: BrowserUni[]; cities: { value: string; label: string; count: number }[]; initial: Query; s: Strings }) {
   const [q, setQ] = useState(initial.q);
+  // Several cities can be chosen at once; none means all.
   const [city, setCity] = useState(initial.city);
+  const toggleCity = (v: string) => setCity((c) => (c.includes(v) ? c.filter((x) => x !== v) : [...c, v]));
   const [type, setType] = useState(initial.type);
   const [sort, setSort] = useState(initial.sort);
 
@@ -69,7 +71,7 @@ export function UniversityBrowser({ unis, cities, initial, s }: { unis: BrowserU
       .filter(
         (u) =>
           (!needle || u.name.toLocaleLowerCase().includes(needle) || u.alternateName?.toLocaleLowerCase().includes(needle)) &&
-          (!city || u.city === city) &&
+          (!city.length || city.includes(u.city)) &&
           (!type || u.type === type),
       )
       .sort((a, b) =>
@@ -85,7 +87,7 @@ export function UniversityBrowser({ unis, cities, initial, s }: { unis: BrowserU
   useEffect(() => {
     const p = new URLSearchParams();
     if (q.trim()) p.set("q", q.trim());
-    if (city) p.set("city", city);
+    city.forEach((c) => p.append("city", c));
     if (type) p.set("type", type);
     if (sort) p.set("sort", sort);
     const qs = p.toString();
@@ -113,7 +115,7 @@ export function UniversityBrowser({ unis, cities, initial, s }: { unis: BrowserU
   }, [list]);
 
   const types = Object.keys(s.types);
-  const filtered = Boolean(q.trim() || city || type);
+  const filtered = Boolean(q.trim() || city.length || type);
   const chip = (on: boolean) =>
     `inline-flex h-9 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border px-3.5 text-sm font-medium transition-colors ${
       on ? "border-brand bg-brand-soft text-brand" : "border-ink/12 bg-white text-ink hover:border-ink/30"
@@ -141,15 +143,18 @@ export function UniversityBrowser({ unis, cities, initial, s }: { unis: BrowserU
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           {/* Cities scroll sideways on phones instead of wrapping into many lines */}
           <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:px-0 sm:pb-0">
-            <button type="button" onClick={() => setCity("")} className={chip(!city)}>
+            <button type="button" onClick={() => setCity([])} aria-pressed={!city.length} className={chip(!city.length)}>
               {s.allCities}
             </button>
-            {cities.map((c) => (
-              <button key={c.value} type="button" onClick={() => setCity(c.value === city ? "" : c.value)} className={chip(c.value === city)}>
-                {c.label}
-                <span className={`text-xs ${c.value === city ? "text-brand/70" : "text-ink-400"}`}>{c.count}</span>
-              </button>
-            ))}
+            {cities.map((c) => {
+              const on = city.includes(c.value);
+              return (
+                <button key={c.value} type="button" onClick={() => toggleCity(c.value)} aria-pressed={on} className={chip(on)}>
+                  {c.label}
+                  <span className={`text-xs ${on ? "text-brand/70" : "text-ink-400"}`}>{c.count}</span>
+                </button>
+              );
+            })}
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -195,7 +200,7 @@ export function UniversityBrowser({ unis, cities, initial, s }: { unis: BrowserU
             type="button"
             onClick={() => {
               setQ("");
-              setCity("");
+              setCity([]);
               setType("");
             }}
             className="cursor-pointer text-sm font-semibold text-brand hover:underline"

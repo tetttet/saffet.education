@@ -115,12 +115,15 @@ export const totals = {
   discountUnis: new Set(programs.filter((p) => p.discount).map((p) => p.uni)).size,
 };
 
+/** Filters that accept several values at once (?city=Istanbul&city=Ankara). */
+export const MULTI_KEYS = ["city", "degree", "language", "field"] as const;
+
 export type ProgramQuery = {
   q?: string;
-  city?: string;
-  degree?: string;
-  language?: string;
-  field?: string;
+  city?: string[];
+  degree?: string[];
+  language?: string[];
+  field?: string[];
   uni?: string;
   max?: string;
   open?: string;
@@ -137,10 +140,10 @@ export function searchPrograms(query: ProgramQuery, locale: Locale) {
   let list = programs.filter(
     (p) =>
       (!q || p.name.toLowerCase().includes(q) || p.uniName.toLowerCase().includes(q) || programName(p.name, locale).toLocaleLowerCase().includes(q)) &&
-      (!query.city || p.city === query.city) &&
-      (!query.degree || p.degree === query.degree) &&
-      (!query.language || p.language === query.language) &&
-      (!query.field || p.field === query.field) &&
+      (!query.city?.length || query.city.includes(p.city)) &&
+      (!query.degree?.length || query.degree.includes(p.degree)) &&
+      (!query.language?.length || query.language.includes(p.language)) &&
+      (!query.field?.length || query.field.includes(p.field)) &&
       (!query.uni || p.uni === query.uni) &&
       (!max || (p.fee !== null && p.fee <= max)) &&
       (!query.open || p.open),

@@ -18,7 +18,9 @@ export function FilterPanel({ id, title, count, children }: { id: string; title:
           {title}
           {count > 0 && <span className="grid size-5 place-items-center rounded-full bg-brand text-[11px] text-white">{count}</span>}
         </span>
-        <span aria-hidden>⌄</span>
+        <svg viewBox="0 0 24 24" className="size-[18px] shrink-0 text-ink-400" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <path d="m6 9 6 6 6-6" />
+        </svg>
       </label>
       {/* Tapping the dimmed page closes the sheet */}
       <label htmlFor={id} className="fixed inset-0 z-40 hidden bg-ink-900/40 peer-checked:block lg:hidden" aria-hidden />

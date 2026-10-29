@@ -8,7 +8,7 @@ import { ProgramRow } from "@/components/program-row";
 import { IconSearch } from "@/components/icons";
 import { fill } from "@/i18n/config";
 import { getI18n, type I18n } from "@/i18n/server";
-import { facet, getUniversity, searchPrograms, universities, type ProgramQuery } from "@/lib/data";
+import { MULTI_KEYS, facet, getUniversity, searchPrograms, universities, type ProgramQuery } from "@/lib/data";
 import { label, num } from "@/lib/format";
 import { catalogueVars, pageMetadata } from "@/lib/metadata";
 
@@ -20,6 +20,18 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const KEYS = ["q", "city", "degree", "language", "field", "uni", "max", "open", "sort"] as const;
+type Key = (typeof KEYS)[number];
+const isMulti = (k: string): k is (typeof MULTI_KEYS)[number] => (MULTI_KEYS as readonly string[]).includes(k);
+
+/** Search params to a query: list filters keep every value, the rest take the first. */
+function toQuery(sp: Record<string, string | string[] | undefined>): ProgramQuery {
+  return Object.fromEntries(
+    [...KEYS, "page"].map((k) => {
+      const all = [sp[k] ?? []].flat().filter(Boolean);
+      return [k, isMulti(k) ? all : all[0]];
+    }),
+  );
+}
 
 export default async function ProgramsPage({ searchParams }: PageProps<"/[lang]/programs">) {
   const i18n = await getI18n();
@@ -37,7 +49,7 @@ export default async function ProgramsPage({ searchParams }: PageProps<"/[lang]/
         {searchParams.then((sp) => (
           <Results
             i18n={i18n}
-            query={Object.fromEntries([...KEYS, "page"].map((k) => [k, typeof sp[k] === "string" ? sp[k] : undefined]))}
+            query={toQuery(sp)}
           />
         ))}
       </Suspense>
@@ -50,17 +62,18 @@ function Results({ query, i18n }: { query: ProgramQuery; i18n: I18n }) {
   const t = dict.programs;
   const labels = dict.labels;
   const { total, page, pages, items } = searchPrograms(query, locale);
-  const active = KEYS.filter((k) => k !== "sort" && query[k]);
+  // One chip per chosen value, so each city or level can be removed on its own.
+  const active = KEYS.filter((k) => k !== "sort").flatMap((k) => [query[k] ?? []].flat().map((v) => ({ k, v })));
 
   const href = (patch: Partial<ProgramQuery>) => {
     const next = new URLSearchParams();
-    for (const [k, v] of Object.entries({ ...query, ...patch })) if (v) next.set(k, v);
+    for (const [k, v] of Object.entries({ ...query, ...patch, page: patch.page })) for (const x of [v ?? []].flat()) if (x) next.append(k, x);
     const s = next.toString();
     return localHref(s ? `/programs?${s}` : "/programs");
   };
+  const without = (k: Key, v: string) => href({ [k]: isMulti(k) ? query[k]?.filter((x) => x !== v) : undefined });
 
-  const chipText = (k: (typeof KEYS)[number]) => {
-    const v = query[k]!;
+  const chipText = (k: Key, v: string) => {
     switch (k) {
       case "city": return label(labels.city, v);
       case "degree": return label(labels.degree, v);
@@ -84,10 +97,10 @@ function Results({ query, i18n }: { query: ProgramQuery; i18n: I18n }) {
             </span>
             <Link href={localHref("/programs")} className="text-sm font-semibold text-brand">{dict.common.reset}</Link>
           </div>
-          <FilterList name="city" title={t.city} allLabel={t.filtersAll} value={query.city} items={facet("city")} map={labels.city} />
-          <FilterList name="degree" title={t.level} allLabel={t.filtersAll} value={query.degree} items={facet("degree")} map={labels.degree} />
-          <FilterList name="language" title={t.language} allLabel={t.filtersAll} value={query.language} items={facet("language")} map={labels.language} visible={3} moreLabel={t.showMore} />
-          <FilterList name="field" title={t.field} allLabel={t.filtersAll} value={query.field} items={facet("field")} map={labels.field} visible={5} moreLabel={t.showMore} />
+          <FilterList name="city" title={t.city} allLabel={t.filtersAll} values={query.city} clearHref={href({ city: undefined })} items={facet("city")} map={labels.city} />
+          <FilterList name="degree" title={t.level} allLabel={t.filtersAll} values={query.degree} clearHref={href({ degree: undefined })} items={facet("degree")} map={labels.degree} />
+          <FilterList name="language" title={t.language} allLabel={t.filtersAll} values={query.language} clearHref={href({ language: undefined })} items={facet("language")} map={labels.language} visible={3} moreLabel={t.showMore} />
+          <FilterList name="field" title={t.field} allLabel={t.filtersAll} values={query.field} clearHref={href({ field: undefined })} items={facet("field")} map={labels.field} visible={5} moreLabel={t.showMore} />
           <div className="border-t border-line pt-4">
             <p className="mb-2 text-sm font-bold">{t.university}</p>
             <select name="uni" defaultValue={query.uni ?? ""} className="field field-sm">
@@ -131,9 +144,9 @@ function Results({ query, i18n }: { query: ProgramQuery; i18n: I18n }) {
 
         {active.length > 0 && (
           <div className="flex flex-wrap items-center gap-2">
-            {active.map((k) => (
-              <Link key={k} href={href({ [k]: undefined, page: undefined })} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1 text-sm font-medium hover:border-brand/40 hover:text-brand">
-                {chipText(k)} <span aria-hidden>×</span>
+            {active.map(({ k, v }) => (
+              <Link key={`${k}=${v}`} href={without(k, v)} replace scroll={false} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1 text-sm font-medium hover:border-brand/40 hover:text-brand">
+                {chipText(k, v)} <span aria-hidden>×</span>
               </Link>
             ))}
             <Link href={localHref("/programs")} className="text-sm text-ink-400 hover:text-ink">{dict.common.reset}</Link>

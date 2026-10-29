@@ -33,7 +33,7 @@ export default async function UniversitiesPage({ searchParams }: PageProps<"/[la
             i18n={i18n}
             initial={{
               q: typeof sp.q === "string" ? sp.q : "",
-              city: typeof sp.city === "string" ? sp.city : "",
+              city: [sp.city ?? []].flat().filter(Boolean),
               type: typeof sp.type === "string" ? sp.type : "",
               sort: typeof sp.sort === "string" ? sp.sort : "",
             }}
@@ -44,7 +44,7 @@ export default async function UniversitiesPage({ searchParams }: PageProps<"/[la
   );
 }
 
-function Browser({ i18n, initial }: { i18n: I18n; initial: { q: string; city: string; type: string; sort: string } }) {
+function Browser({ i18n, initial }: { i18n: I18n; initial: { q: string; city: string[]; type: string; sort: string } }) {
   const { t: dict, href } = i18n;
   const t = dict.universities;
   const cities = Object.keys(dict.labels.city)
