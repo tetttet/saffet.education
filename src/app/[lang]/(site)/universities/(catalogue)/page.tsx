@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { PageHead } from "@/components/page-head";
 import { UniversityBrowser } from "@/components/university-browser";
+import { UniversityBrowserSkeleton } from "@/components/university-skeleton";
 import { fill } from "@/i18n/config";
 import { getI18n, type I18n } from "@/i18n/server";
 import { universities } from "@/lib/data";
@@ -20,14 +22,8 @@ export default async function UniversitiesPage({ searchParams }: PageProps<"/[la
   const t = i18n.t.universities;
   return (
     <>
-      <section className="container-page pt-12 pb-8 sm:pt-16">
-        <p className="font-mono text-sm text-ink-600 sm:text-[15px]">{t.eyebrow}</p>
-        <h1 className="section-title mt-3">
-          {t.titleStart} {t.titleMarker}
-        </h1>
-        <p className="mt-3 max-w-md text-[14px] leading-relaxed text-muted sm:text-[15px]">{t.lead}</p>
-      </section>
-      <Suspense fallback={<div className="container-page h-96" />}>
+      <PageHead t={t} />
+      <Suspense fallback={<UniversityBrowserSkeleton />}>
         {searchParams.then((sp) => (
           <Browser
             i18n={i18n}

@@ -5,6 +5,7 @@ import { Suspense, type CSSProperties, type ReactNode } from "react";
 import { UniCover } from "@/components/cards";
 import { CountUp } from "@/components/motion";
 import { ProgramRow } from "@/components/program-row";
+import { UniversityDetailSkeleton } from "@/components/university-detail-skeleton";
 import { IconPin } from "@/components/icons";
 import { fill } from "@/i18n/config";
 import { getI18n, type I18n } from "@/i18n/server";
@@ -54,7 +55,7 @@ function groupBy(list: Program[], key: "degree" | "language" | "field") {
 export default async function UniversityPage({ params }: PageProps<"/[lang]/universities/[slug]">) {
   const i18n = await getI18n();
   return (
-    <Suspense fallback={<div className="h-[520px] animate-pulse bg-surface" />}>
+    <Suspense fallback={<UniversityDetailSkeleton i18n={i18n} />}>
       {params.then(({ slug }) => <University slug={slug} i18n={i18n} />)}
     </Suspense>
   );

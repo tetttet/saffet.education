@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
+import { PageHead } from "@/components/page-head";
 import { AutoSubmitForm } from "@/components/auto-submit-form";
 import { FilterList } from "@/components/filter-list";
 import { FilterPanel } from "@/components/filter-panel";
 import { ProgramRow } from "@/components/program-row";
+import { ProgramsSkeleton } from "@/components/programs-skeleton";
 import { IconSearch } from "@/components/icons";
 import { fill } from "@/i18n/config";
 import { getI18n, type I18n } from "@/i18n/server";
@@ -38,14 +40,8 @@ export default async function ProgramsPage({ searchParams }: PageProps<"/[lang]/
   const t = i18n.t.programs;
   return (
     <>
-      <section className="container-page pt-12 pb-8 sm:pt-16">
-        <p className="font-mono text-sm text-ink-600 sm:text-[15px]">{t.eyebrow}</p>
-        <h1 className="section-title mt-3">
-          {t.titleStart} {t.titleMarker}
-        </h1>
-        <p className="mt-3 max-w-md text-[14px] leading-relaxed text-muted sm:text-[15px]">{t.lead}</p>
-      </section>
-      <Suspense fallback={<ResultsSkeleton />}>
+      <PageHead t={t} />
+      <Suspense fallback={<ProgramsSkeleton />}>
         {searchParams.then((sp) => (
           <Results
             i18n={i18n}
@@ -176,18 +172,5 @@ function Results({ query, i18n }: { query: ProgramQuery; i18n: I18n }) {
         )}
       </section>
     </AutoSubmitForm>
-  );
-}
-
-function ResultsSkeleton() {
-  return (
-    <div className="container-page grid gap-6 pt-2 lg:grid-cols-[290px_1fr] lg:gap-8">
-      <div className="h-[40rem] animate-pulse rounded-[18px] bg-surface" />
-      <div className="space-y-4">
-        {Array.from({ length: 4 }, (_, i) => (
-          <div key={i} className="h-40 animate-pulse rounded-[18px] bg-surface" />
-        ))}
-      </div>
-    </div>
   );
 }

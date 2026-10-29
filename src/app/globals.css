@@ -297,6 +297,28 @@ select.field {
 
 .animated-gradient { background-size: 200% 200%; animation: gradient-pan 12s ease infinite; }
 
+/* Skeleton placeholders: one light wave sweeps across every bone at once (fixed background), so the page shimmers as a whole. */
+.skeleton {
+  background-color: #e4e9f2;
+  background-image: linear-gradient(100deg, transparent 35%, rgb(255 255 255 / 0.7) 50%, transparent 65%);
+  background-size: 200vw 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: skeleton-sweep 1.6s ease-in-out infinite;
+}
+@keyframes skeleton-sweep {
+  from { background-position: -150vw 0; }
+  to { background-position: 150vw 0; }
+}
+/* On dark backgrounds (university hero, consult card) the bones are translucent white instead of grey. */
+.skeleton-dark {
+  background-color: rgb(255 255 255 / 0.14);
+  background-image: linear-gradient(100deg, transparent 35%, rgb(255 255 255 / 0.14) 50%, transparent 65%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { background-image: none; }
+}
+
 /* Header gains a shadow once the page scrolls (where scroll timelines are supported). */
 @supports (animation-timeline: scroll()) {
   @keyframes header-shadow { to { box-shadow: 0 10px 30px -18px #0b163059; } }

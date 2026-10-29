@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Suspense, type CSSProperties, type ReactNode } from "react";
 import { CountUp } from "@/components/motion";
 import { ProgramRow } from "@/components/program-row";
+import { ProgramDetailSkeleton } from "@/components/program-detail-skeleton";
 import { IconPin } from "@/components/icons";
 import { fill, intlLocale } from "@/i18n/config";
 import { getI18n, type I18n } from "@/i18n/server";
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/programs/[
 export default async function ProgramPage({ params }: PageProps<"/[lang]/programs/[id]">) {
   const i18n = await getI18n();
   return (
-    <Suspense fallback={<div className="container-page mt-12 h-96 animate-pulse rounded-[18px] bg-surface" />}>
+    <Suspense fallback={<ProgramDetailSkeleton i18n={i18n} />}>
       {params.then(({ id }) => <Program id={id} i18n={i18n} />)}
     </Suspense>
   );
