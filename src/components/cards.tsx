@@ -38,7 +38,7 @@ export function UniCover({
         className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
         style={{
           // Same dark base for every university, tinted by one soft glow so the grid looks consistent.
-          background: `radial-gradient(70% 90% at 90% 0%, hsl(${h} 70% 50% / 0.55), transparent 65%), radial-gradient(60% 80% at 0% 100%, #0360eb40, transparent 60%), #0a1633`,
+          background: `radial-gradient(70% 90% at 90% 0%, hsl(${h} 70% 50% / 0.55), transparent 65%), radial-gradient(60% 80% at 0% 100%, color-mix(in srgb, var(--color-brand) 25%, transparent), transparent 60%), #0a1633`,
         }}
       >
         <svg className="absolute inset-0 size-full" aria-hidden>

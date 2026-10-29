@@ -34,6 +34,22 @@
   --radius-card: 24px;
 }
 
+/*
+ * Brand colour experiment: with <html data-brand="sky"> the blue turns sky blue, the hue of #6bc1fa
+ * darkened to #0a79c2 so white text on it stays readable (contrast 4.6:1).
+ * To go back to the original blue, remove data-brand="sky" from <html> in src/app/[lang]/layout.tsx.
+ * --brand-glow / --brand-night recolour the few gradients that mix the brand with a lighter or darker blue.
+ */
+html[data-brand="sky"] {
+  --color-brand: #0a79c2;
+  --color-brand-dark: #0868a7;
+  --color-brand-deep: #075a90;
+  --color-brand-soft: #eaf6fe;
+  --color-brand-100: #cfe9fb;
+  --brand-glow: #3aa6ee;
+  --brand-night: #06426b;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -153,7 +169,7 @@ body {
   font-size: 15px;
   font-weight: 700;
   color: #fff;
-  box-shadow: 0 8px 18px #0360eb33;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--color-brand) 20%, transparent);
   transition: background 0.2s;
 }
 .btn-primary:hover {
@@ -217,7 +233,7 @@ select.field {
 .mesh-dark {
   background-color: var(--color-ink-900);
   background-image:
-    radial-gradient(672px 416px at 90% 0, #0360eb59, transparent 55%),
+    radial-gradient(672px 416px at 90% 0, color-mix(in srgb, var(--color-brand) 35%, transparent), transparent 55%),
     radial-gradient(640px 448px at 0 100%, #ff9e1b38, transparent 55%);
 }
 .tiles {
@@ -368,7 +384,7 @@ select.field {
 
 /* Program page hero: a faint dot grid that fades out toward the text. */
 .hero-dots {
-  background-image: radial-gradient(#0360eb2e 1.2px, transparent 1.4px);
+  background-image: radial-gradient(color-mix(in srgb, var(--color-brand) 18%, transparent) 1.2px, transparent 1.4px);
   background-size: 20px 20px;
   mask-image: linear-gradient(to left, #000 10%, transparent 85%);
 }

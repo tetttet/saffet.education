@@ -45,7 +45,7 @@ export async function HowItWorks() {
           {/* The goal of the four steps: a student card that floats, with a light sweeping across it. */}
           <div {...reveal} style={{ "--d": "0.15s" } as CSSProperties} className="mt-12 hidden pl-2 sm:block" aria-hidden>
             <div className="w-full max-w-[380px] -rotate-3 animate-[float-y_6s_ease-in-out_infinite] motion-reduce:animate-none">
-              <div className="relative aspect-[1.586] overflow-hidden rounded-[20px] bg-[linear-gradient(135deg,#2f7bff,#0360eb_45%,#1a237e)] p-5 text-white shadow-[0_24px_50px_-20px_#0360eb99]">
+              <div className="relative aspect-[1.586] overflow-hidden rounded-[20px] bg-[linear-gradient(135deg,var(--brand-glow,#2f7bff),var(--color-brand)_45%,var(--brand-night,#1a237e))] p-5 text-white shadow-[0_24px_50px_-20px_color-mix(in_srgb,var(--color-brand)_60%,transparent)]">
                 <span className="pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-[shine_4s_ease-in-out_infinite] motion-reduce:hidden" />
                 <div className="absolute -top-16 -right-16 size-48 rounded-full bg-white/10" />
                 <div className="relative flex items-center justify-between">

@@ -66,7 +66,7 @@ export function LeadForm({ t, fields }: { t: Dictionary["leadForm"]; fields: str
 
       <button
         type="submit"
-        className="flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-brand text-base font-semibold text-white shadow-[0_10px_24px_#0360eb40] transition hover:bg-brand-dark active:scale-[0.98]"
+        className="flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-brand text-base font-semibold text-white shadow-[0_10px_24px_color-mix(in_srgb,var(--color-brand)_25%,transparent)] transition hover:bg-brand-dark active:scale-[0.98]"
       >
         {t.submit}
         <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>

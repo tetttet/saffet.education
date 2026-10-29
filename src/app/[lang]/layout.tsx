@@ -36,7 +36,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const { locale } = await getI18n();
   return (
     // data-scroll-behavior: Next turns off the smooth scroll from globals.css while navigating, so a new page lands exactly at the top.
-    <html lang={locale} data-scroll-behavior="smooth" className={`${inter.variable} ${space.variable} ${manrope.variable} h-full antialiased`}>
+    <html lang={locale} data-brand="sky" data-scroll-behavior="smooth" className={`${inter.variable} ${space.variable} ${manrope.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         {children}
         <RevealObserver />

@@ -31,7 +31,7 @@ export async function Header() {
           <LanguageSwitcher locale={locale} label={t.nav.language} />
           <Link
             href={consult.href}
-            className="btn-shine inline-flex h-10 items-center rounded-[9px] bg-linear-to-br from-[#2a7dff] to-brand-deep px-5 text-[14px] font-bold text-white shadow-[0_8px_18px_#0360eb33] transition hover:brightness-110"
+            className="btn-shine inline-flex h-10 items-center rounded-[9px] bg-linear-to-br from-[var(--brand-glow,#2a7dff)] to-brand-deep px-5 text-[14px] font-bold text-white shadow-[0_8px_18px_color-mix(in_srgb,var(--color-brand)_20%,transparent)] transition hover:brightness-110"
           >
             {consult.label}
           </Link>

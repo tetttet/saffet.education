@@ -103,7 +103,7 @@ export default async function Home() {
           {h.perks.map((p, i) => (
             <li key={p.title} {...reveal} style={{ ...d(i * 0.08), "--i": i } as CSSProperties} className="perk relative border-t border-ink/15 pt-4">
               {/* A brand-colored line runs across the points one after another, on a loop. */}
-              <span className="perk-line absolute inset-x-0 -top-[2px] h-[3px] rounded-full bg-brand shadow-[0_0_12px_#0360eb80]" aria-hidden />
+              <span className="perk-line absolute inset-x-0 -top-[2px] h-[3px] rounded-full bg-brand shadow-[0_0_12px_color-mix(in_srgb,var(--color-brand)_50%,transparent)]" aria-hidden />
               <span className="perk-num font-mono text-xs text-ink-400">{String(i + 1).padStart(2, "0")}</span>
               <h2 className="perk-title mt-2.5 font-display text-[15px] leading-snug font-semibold text-ink sm:text-lg">{p.title}</h2>
               <p className="mt-1.5 max-w-[300px] text-[13px] leading-relaxed text-muted sm:text-sm">{p.text}</p>

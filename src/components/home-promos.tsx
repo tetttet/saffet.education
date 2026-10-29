@@ -56,7 +56,7 @@ export async function HomePromos() {
 
           {/* Big brand circle with the photo, a small constellation and a round badge */}
           <div className="absolute top-0 right-0 bottom-0 w-[40%] sm:w-[48%]" aria-hidden>
-            <div className="absolute -right-16 -bottom-24 size-[300px] rounded-full bg-[radial-gradient(circle_at_30%_30%,#4a8bff,#0360eb_45%,#1a237e)] sm:size-[340px]" />
+            <div className="absolute -right-16 -bottom-24 size-[300px] rounded-full bg-[radial-gradient(circle_at_30%_30%,var(--brand-glow,#4a8bff),var(--color-brand)_45%,var(--brand-night,#1a237e))] sm:size-[340px]" />
             <svg viewBox="0 0 260 260" className="absolute top-6 -left-6 size-[200px] sm:size-[240px]">
               <path d="M30 60 118 96 70 150 150 200M118 96 200 40M70 150 60 230" fill="none" stroke="#fff" strokeOpacity="0.35" strokeWidth="1" />
               {stars.map(([x, y], i) => (

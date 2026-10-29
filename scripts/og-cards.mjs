@@ -17,7 +17,7 @@ const out = join(root, "public", "og");
 mkdirSync(out, { recursive: true });
 
 const W = 1200, H = 630, BAR = 8, PANEL = 660;
-const colors = { brand: "#0360eb", ink: "#0b1630", muted: "#47526b", sun: "#ff9e1b", paper: "#fbfcfe" };
+const colors = { brand: "#0a79c2", ink: "#0b1630", muted: "#47526b", sun: "#ff9e1b", paper: "#fbfcfe" };
 const dataUrl = (buffer, type) => `data:${type};base64,${buffer.toString("base64")}`;
 
 // The student stands right of centre in the source photo; crop around her to the panel's shape.
