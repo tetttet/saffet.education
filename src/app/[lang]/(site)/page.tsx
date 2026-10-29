@@ -58,25 +58,25 @@ export default async function Home() {
         <div className="relative mx-auto grid max-w-[1380px] px-4 pb-24 sm:px-8 lg:min-h-[620px] lg:grid-cols-[44%_56%] lg:px-16 lg:pb-0">
           <div className="relative z-10 pt-10 pb-8 lg:pt-[78px] lg:pr-12 lg:pb-40">
             <p style={d(0)} className="enter text-[13px] font-semibold text-brand">{h.brandMessage}</p>
-            <h1 style={d(0.08)} className="enter mt-4 max-w-[640px] font-display text-[clamp(32px,4.5vw,50px)] leading-[1.05] font-bold tracking-[-0.025em] text-ink">
+            <h1 style={d(0.08)} className="enter mt-4 max-w-[640px] font-display text-[clamp(28px,4.5vw,50px)] leading-[1.05] font-bold tracking-[-0.025em] text-ink">
               {h.titleStart} <span className="highlight">{h.titleMarker}</span> {h.titleEnd}
             </h1>
-            <p style={d(0.16)} className="enter mt-5 max-w-[515px] text-[15px] leading-[1.72] text-muted">{fill(h.lead, vars)}</p>
+            <p style={d(0.16)} className="enter mt-5 max-w-[515px] text-[14px] leading-[1.7] sm:text-[15px] sm:leading-[1.72] text-muted">{fill(h.lead, vars)}</p>
             <dl style={d(0.24)} className="enter mt-8 grid grid-cols-3 gap-4 border-t border-ink/10 pt-6 sm:flex sm:gap-x-10">
               <div>
                 <dt className="text-xs text-muted">{h.statPrograms}</dt>
-                <dd className="mt-1 font-display text-xl font-bold sm:text-2xl"><CountUp value={totals.programs} locale={locale} /></dd>
+                <dd className="mt-1 font-display text-lg font-bold sm:text-2xl"><CountUp value={totals.programs} locale={locale} /></dd>
               </div>
               <div>
                 <dt className="text-xs text-muted">{h.statFrom}</dt>
-                <dd className="mt-1 font-display text-xl font-bold sm:text-2xl">
+                <dd className="mt-1 font-display text-lg font-bold sm:text-2xl">
                   {vars.min}
                   <span className="text-xs font-medium text-muted sm:text-sm">{t.common.perYear}</span>
                 </dd>
               </div>
               <div>
                 <dt className="text-xs text-muted">{h.statIntake}</dt>
-                <dd className="mt-1 flex items-center gap-2 font-display text-xl font-bold sm:text-2xl">
+                <dd className="mt-1 flex items-center gap-2 font-display text-lg font-bold sm:text-2xl">
                   <span className="size-2 rounded-full bg-success" aria-hidden />
                   {h.statOpen}
                 </dd>
@@ -127,7 +127,7 @@ export default async function Home() {
                   tabIndex={i >= universities.length ? -1 : undefined}
                   className="group flex shrink-0 items-baseline gap-2 pr-10"
                 >
-                  <span className="font-display text-[19px] font-semibold tracking-tight text-ink/40 transition-colors group-hover:text-ink">
+                  <span className="font-display text-[17px] font-semibold sm:text-[19px] tracking-tight text-ink/40 transition-colors group-hover:text-ink">
                     {u.name.replace(/\s*University\b/, "")}
                   </span>
                   <span className="text-[10px] font-semibold tracking-[0.14em] text-ink/30 uppercase transition-colors group-hover:text-brand">
@@ -148,7 +148,7 @@ export default async function Home() {
             <h2 className="section-title mt-3">
               {h.citiesTitleStart} {h.citiesTitleMarker}
             </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-muted">{h.citiesText}</p>
+            <p className="mt-3 text-[14px] leading-relaxed text-muted sm:text-[15px]">{h.citiesText}</p>
           </div>
           <Link href={href("/universities")} className="group text-sm font-semibold text-ink underline decoration-ink/25 underline-offset-4 transition hover:text-brand hover:decoration-brand">
             {h.citiesAction} <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
@@ -182,10 +182,10 @@ export default async function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
 
                 <div className={`absolute inset-x-0 bottom-0 text-white ${feature ? "p-6 sm:p-8" : "p-4 sm:p-5"}`}>
-                  <h3 className={`font-display leading-none font-bold tracking-tight ${feature ? "text-4xl sm:text-5xl" : "text-xl sm:text-2xl"}`}>
+                  <h3 className={`font-display leading-none font-bold tracking-tight ${feature ? "text-3xl sm:text-5xl" : "text-xl sm:text-2xl"}`}>
                     {label(t.labels.city, c.value)}
                   </h3>
-                  <p className={`mt-2 text-white/80 ${feature ? "max-w-md text-[15px] leading-relaxed" : "hidden text-[13px] leading-snug sm:block"}`}>
+                  <p className={`mt-2 text-white/80 ${feature ? "max-w-md text-[14px] leading-relaxed sm:text-[15px]" : "hidden text-[13px] leading-snug sm:block"}`}>
                     {h.cityNotes[c.value]}
                   </p>
                   <p className="mt-3 font-mono text-[11px] text-white/65 sm:text-xs">
@@ -260,7 +260,7 @@ export default async function Home() {
             <h2 className="section-title mt-3">
               {h.unisTitleStart} {h.unisTitleMarker}
             </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-muted">{h.unisText}</p>
+            <p className="mt-3 text-[14px] leading-relaxed text-muted sm:text-[15px]">{h.unisText}</p>
           </div>
           <Link href={href("/universities")} className="group text-sm font-semibold text-ink underline decoration-ink/25 underline-offset-4 transition hover:text-brand hover:decoration-brand">
             {fill(h.unisAction, { n: totals.universities })} <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
@@ -291,7 +291,7 @@ export default async function Home() {
         <div className="grid gap-8 lg:grid-cols-[5fr_7fr] lg:gap-16">
           <div {...reveal} className="lg:sticky lg:top-28 lg:self-start">
             <h2 className="section-title">{h.faqTitle}</h2>
-            <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">{h.faqText}</p>
+            <p className="mt-3 max-w-md text-[14px] leading-relaxed text-muted sm:text-[15px]">{h.faqText}</p>
             <a
               href={whatsappLink(t.whatsapp.hello)}
               target="_blank"

@@ -103,7 +103,7 @@ export async function HomePromos() {
 
       {/* What brings you here */}
       <div {...reveal} className="flex flex-col gap-4 rounded-[24px] bg-[#eef4ff] p-5 sm:p-7 2xl:flex-row 2xl:items-center 2xl:gap-8 2xl:px-10">
-        <p className="shrink-0 font-display text-xl font-semibold text-ink sm:text-2xl">{p.choiceTitle}</p>
+        <p className="shrink-0 font-display text-lg font-semibold text-ink sm:text-2xl">{p.choiceTitle}</p>
         <div className="grid flex-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {choices.map(({ icon: Icon, query }, i) => (
             <Link

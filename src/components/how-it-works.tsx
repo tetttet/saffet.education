@@ -28,7 +28,7 @@ export async function HowItWorks() {
           <div {...reveal}>
             <p className="font-mono text-sm text-ink-600 sm:text-[15px]">{h.stepsEyebrow}</p>
             <h2 className="section-title mt-3">{h.stepsTitle}</h2>
-            <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">{h.stepsText}</p>
+            <p className="mt-3 max-w-md text-[14px] leading-relaxed text-muted sm:text-[15px]">{h.stepsText}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href={href("/apply")} className="btn-primary group">
                 {h.stepsCta} <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
@@ -114,8 +114,8 @@ export async function HowItWorks() {
                   <p className="pt-0.5 font-mono text-xs text-ink-400">
                     {h.stepLabel} {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mt-1.5 font-display text-xl font-bold text-ink transition-colors group-hover/step:text-brand sm:text-2xl">{s.title}</h3>
-                  <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-muted">{s.text}</p>
+                  <h3 className="mt-1.5 font-display text-lg font-bold text-ink transition-colors group-hover/step:text-brand sm:text-2xl">{s.title}</h3>
+                  <p className="mt-2 max-w-xl text-[14px] leading-relaxed text-muted sm:text-[15px]">{s.text}</p>
                   <p
                     className={`mt-3.5 inline-flex items-start gap-1.5 rounded-xl px-3 py-1.5 text-[13px] font-semibold ${
                       final ? "bg-sun/15 text-[#a35f00]" : "bg-brand-soft text-brand"

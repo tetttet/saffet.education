@@ -79,8 +79,8 @@ export function PopularUnis({ unis }: { unis: PopularUni[] }) {
           {unis.map((u, i) => (
             <div key={u.slug} data-active={i === active || undefined} className="group/cap pointer-events-none [grid-area:1/1] self-end" aria-hidden={i !== active}>
               <p className={`${rise} group-data-active/cap:delay-200 font-mono text-[11px] text-white/65 sm:text-xs`}>{u.meta}</p>
-              <h3 className={`${rise} group-data-active/cap:delay-[280ms] mt-2 font-display text-3xl leading-tight font-bold tracking-tight sm:text-4xl`}>{u.name}</h3>
-              <p className={`${rise} group-data-active/cap:delay-[360ms] mt-3 max-w-md text-[15px] leading-relaxed text-white/80`}>{u.note}</p>
+              <h3 className={`${rise} group-data-active/cap:delay-[280ms] mt-2 font-display text-2xl leading-tight font-bold tracking-tight sm:text-4xl`}>{u.name}</h3>
+              <p className={`${rise} group-data-active/cap:delay-[360ms] mt-3 max-w-md text-[14px] leading-relaxed text-white/80 sm:text-[15px]`}>{u.note}</p>
               <p className={`${rise} group-data-active/cap:delay-[440ms] mt-4 font-mono text-[11px] text-white/65 sm:text-xs`}>
                 {u.programs} · {u.english}
               </p>

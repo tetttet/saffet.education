@@ -23,7 +23,7 @@ export function FaqList({ items }: { items: FaqItem[] }) {
                 onClick={() => toggle(i)}
                 className="group flex w-full cursor-pointer items-center justify-between gap-6 py-5 text-left"
               >
-                <span className="font-display text-[17px] leading-snug font-semibold text-ink transition-colors group-hover:text-brand sm:text-lg">{f.q}</span>
+                <span className="font-display text-[16px] leading-snug font-semibold text-ink transition-colors group-hover:text-brand sm:text-lg">{f.q}</span>
                 <span className={`shrink-0 text-2xl leading-none font-light text-ink-400 transition-transform duration-300 ${on ? "rotate-45" : ""}`} aria-hidden>
                   +
                 </span>
@@ -35,7 +35,7 @@ export function FaqList({ items }: { items: FaqItem[] }) {
               className={`grid transition-[grid-template-rows] duration-400 ease-out motion-reduce:transition-none ${on ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
             >
               <div className="overflow-hidden">
-                <p className={`max-w-2xl pb-5 text-[15px] leading-relaxed text-muted transition-opacity duration-400 ${on ? "opacity-100" : "opacity-0"}`}>{f.a}</p>
+                <p className={`max-w-2xl pb-5 text-[14px] leading-relaxed text-muted sm:text-[15px] transition-opacity duration-400 ${on ? "opacity-100" : "opacity-0"}`}>{f.a}</p>
               </div>
             </div>
           </li>
