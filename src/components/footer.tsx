@@ -41,10 +41,10 @@ export async function Footer() {
       <section className="mx-auto mt-14 w-full max-w-[1380px] px-4 sm:mt-20 sm:px-8 lg:px-16">
         <div {...reveal} className="group/cta relative overflow-hidden rounded-[24px] bg-[#00235b] text-white">
           <div className="relative z-10 px-6 pt-8 pb-60 sm:max-w-[60%] sm:px-9 sm:py-7 lg:py-8">
-            <h2 className="font-display text-[22px] leading-snug font-semibold sm:text-[26px]">
+            <h2 className="font-display text-[20px] leading-snug font-semibold sm:text-[26px]">
               {h.ctaTitleStart} {h.ctaTitleMarker}
             </h2>
-            <p className="mt-2 max-w-[640px] text-[16px] leading-relaxed text-white/85 sm:text-[17px]">{h.ctaText}</p>
+            <p className="mt-2 max-w-[640px] text-[15px] leading-relaxed text-white/85 sm:text-[17px]">{h.ctaText}</p>
             <Link href={href("/programs")} className="group mt-6 inline-flex items-center gap-2 text-[15px] font-semibold">
               {h.ctaSearch}
               <svg viewBox="0 0 24 24" className="size-[18px] transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -83,7 +83,7 @@ export async function Footer() {
             </svg>
             <div className="absolute inset-0 grid place-items-center text-center">
               <div>
-                <p className="font-display text-[34px] leading-none font-bold sm:text-[34px]">
+                <p className="font-display text-[28px] leading-none font-bold sm:text-[34px]">
                   <CountUp value={openShare} locale={locale} />%
                 </p>
                 <p className="mt-1 text-[10px] font-semibold tracking-wide text-white/70">{h.ctaStatLabel}</p>

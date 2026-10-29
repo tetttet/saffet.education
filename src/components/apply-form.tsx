@@ -52,7 +52,7 @@ export function ApplyForm({ interest, t, levels, defaultLevel, unis }: Props) {
   return (
     <form onSubmit={onSubmit} className="space-y-4 rounded-[20px] bg-[#f3f5f9] p-5 sm:p-8">
       <div className="pb-2">
-        <h2 className="font-display text-xl font-bold text-ink sm:text-2xl">{t.title}</h2>
+        <h2 className="font-display text-lg font-bold text-ink sm:text-2xl">{t.title}</h2>
         <p className="mt-1.5 text-sm text-muted">{t.note}</p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">

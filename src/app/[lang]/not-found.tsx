@@ -15,7 +15,7 @@ export default async function NotFound() {
   return (
     <SiteFrame>
       <div className="container-page py-24 text-center">
-        <div className="font-display text-7xl font-extrabold text-brand">404</div>
+        <div className="font-display text-6xl font-extrabold sm:text-7xl text-brand">404</div>
         <h1 className="mt-4 font-display text-2xl font-bold">{t.notFound.title}</h1>
         <p className="mt-2 text-muted">{t.notFound.text}</p>
         <div className="mt-8 flex justify-center gap-3">

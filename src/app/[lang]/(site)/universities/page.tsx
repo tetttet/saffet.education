@@ -25,7 +25,7 @@ export default async function UniversitiesPage({ searchParams }: PageProps<"/[la
         <h1 className="section-title mt-3">
           {t.titleStart} {t.titleMarker}
         </h1>
-        <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">{t.lead}</p>
+        <p className="mt-3 max-w-md text-[14px] leading-relaxed text-muted sm:text-[15px]">{t.lead}</p>
       </section>
       <Suspense fallback={<div className="container-page h-96" />}>
         {searchParams.then((sp) => (

@@ -67,7 +67,7 @@ const documentImages = ["diploma", "passport", "school", "language", "photos"];
 function Heading({ id, children, action, plain = false }: { id?: string; children: ReactNode; action?: ReactNode; plain?: boolean }) {
   return (
     <div id={id} className={`flex scroll-mt-32 flex-wrap items-end justify-between gap-x-6 gap-y-2 ${plain ? "" : "border-t border-ink/15 pt-5"}`}>
-      <h2 className="font-display text-[22px] font-semibold tracking-[-0.01em] sm:text-2xl">{children}</h2>
+      <h2 className="font-display text-[20px] font-semibold tracking-[-0.01em] sm:text-2xl">{children}</h2>
       {action}
     </div>
   );
@@ -123,7 +123,7 @@ function University({ slug, i18n }: { slug: string; i18n: I18n }) {
             <div className="max-w-3xl">
               <LogoTile logo={uniLogo(uni.slug)} initials={initials(uni.name)} hue={hue(uni.slug)} className="enter mb-5 size-20 rounded-2xl p-2 shadow-lg ring-white/20 sm:size-24" style={d(0)} />
               {uni.alternateName && <p style={d(0.05)} className="enter text-[15px] text-white/70">{uni.alternateName}</p>}
-              <h1 style={d(0.1)} className="enter mt-2 font-display text-[clamp(34px,5vw,64px)] leading-[1.02] font-semibold tracking-[-0.03em] text-balance text-white">
+              <h1 style={d(0.1)} className="enter mt-2 font-display text-[clamp(28px,5vw,64px)] leading-[1.02] font-semibold tracking-[-0.03em] text-balance text-white">
                 {uni.name}
               </h1>
               <p style={d(0.15)} className="enter mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-[15px] text-white/80">
@@ -163,7 +163,7 @@ function University({ slug, i18n }: { slug: string; i18n: I18n }) {
           {facts.map((f, i) => (
             <div key={f.k} className={`flex flex-col-reverse justify-end bg-white px-5 py-4 sm:py-5 ${i === 0 ? "col-span-2 md:col-span-1" : ""}`}>
               <dt className="mt-1 text-[13px] text-muted">{f.k}</dt>
-              <dd className={`font-display text-xl leading-snug font-semibold tracking-[-0.01em] ${f.accent ? "text-brand" : "text-ink"}`}>{f.v}</dd>
+              <dd className={`font-display text-lg leading-snug font-semibold tracking-[-0.01em] sm:text-xl ${f.accent ? "text-brand" : "text-ink"}`}>{f.v}</dd>
             </div>
           ))}
         </dl>
@@ -185,11 +185,11 @@ function University({ slug, i18n }: { slug: string; i18n: I18n }) {
           {texts.description && (
             <section {...reveal}>
               <Heading id="about" plain>{t.about}</Heading>
-              <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-ink-600">{texts.description}</p>
+              <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-ink-600 sm:text-[16px]">{texts.description}</p>
               {texts.housing && (
                 <>
                   <h3 className="mt-7 font-display text-lg font-semibold">{t.housing}</h3>
-                  <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-ink-600">{texts.housing}</p>
+                  <p className="mt-2 max-w-2xl text-[14px] leading-relaxed text-ink-600 sm:text-[15px]">{texts.housing}</p>
                 </>
               )}
             </section>
@@ -268,7 +268,7 @@ function University({ slug, i18n }: { slug: string; i18n: I18n }) {
                   <span className="grid size-9 place-items-center rounded-full border border-ink/15 bg-white font-display text-[15px] font-semibold text-ink">{i + 1}</span>
                   <div className="pt-1.5">
                     <h3 className="font-display text-[17px] font-semibold text-ink">{s.title}</h3>
-                    <p className="mt-1 max-w-xl text-[15px] leading-relaxed text-muted">{s.text}</p>
+                    <p className="mt-1 max-w-xl text-[14px] leading-relaxed text-muted sm:text-[15px]">{s.text}</p>
                   </div>
                 </li>
               ))}
@@ -281,7 +281,7 @@ function University({ slug, i18n }: { slug: string; i18n: I18n }) {
                   key={doc}
                   {...reveal}
                   style={d(i * 0.06)}
-                  className="group flex items-center gap-4 rounded-[14px] border border-ink/10 p-3.5 pr-4 text-[15px] leading-snug transition-colors hover:border-ink/25"
+                  className="group flex items-center gap-4 rounded-[14px] border border-ink/10 p-3.5 pr-4 text-[14px] leading-snug sm:text-[15px] transition-colors hover:border-ink/25"
                 >
                   <span className="grid size-14 shrink-0 place-items-center rounded-xl bg-ink-50">
                     <Picture
@@ -350,8 +350,8 @@ function University({ slug, i18n }: { slug: string; i18n: I18n }) {
           </div>
 
           <div className="rounded-[18px] bg-[#00235b] p-6 text-white">
-            <p className="font-display text-xl font-semibold">{t.consultTitle}</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-white/70">{fill(t.consultText, { name: uni.name })}</p>
+            <p className="font-display text-lg font-semibold sm:text-xl">{t.consultTitle}</p>
+            <p className="mt-2 text-[14px] leading-relaxed text-white/70 sm:text-[15px]">{fill(t.consultText, { name: uni.name })}</p>
             <div className="mt-6 grid gap-2">
               <Link href={href(`/apply?uni=${uni.slug}`)} className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-[15px] font-semibold text-ink-900 transition-colors hover:bg-brand-soft">
                 {t.consultButton}

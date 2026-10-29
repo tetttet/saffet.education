@@ -30,7 +30,7 @@ export default async function ApplyPage({ searchParams }: PageProps<"/[lang]/app
         <h1 className="section-title mt-3">
           {a.titleStart} {a.titleMarker}
         </h1>
-        <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-muted">{a.lead}</p>
+        <p className="mt-4 max-w-lg text-[14px] leading-relaxed text-muted sm:text-[15px]">{a.lead}</p>
       </div>
 
       {/* On phones the form comes right after the heading; on desktop it sits in the right column */}

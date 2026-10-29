@@ -73,7 +73,7 @@ function Photo({ slug, name, className, sizes, priority }: { slug: string; name:
 function Heading({ children }: { children: string }) {
   return (
     <div className="border-t border-ink/15 pt-5">
-      <h2 className="font-display text-[22px] font-semibold tracking-[-0.01em] sm:text-2xl">{children}</h2>
+      <h2 className="font-display text-[20px] font-semibold tracking-[-0.01em] sm:text-2xl">{children}</h2>
     </div>
   );
 }
@@ -149,7 +149,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
                 <span className="rounded-md bg-brand px-2 py-0.5 font-semibold text-white">{label(labels.degree, p.degree)}</span>
                 <span className="rounded-md bg-white px-2 py-0.5 font-medium text-ink-600 ring-1 ring-ink/10">{label(labels.field, p.field)}</span>
               </p>
-              <h1 style={d(0.15)} className="enter mt-4 font-display text-[clamp(32px,4.6vw,56px)] leading-[1.04] font-semibold tracking-[-0.03em] text-balance">
+              <h1 style={d(0.15)} className="enter mt-4 font-display text-[clamp(28px,4.6vw,56px)] leading-[1.04] font-semibold tracking-[-0.03em] text-balance">
                 {name}
               </h1>
               {name !== p.name && (
@@ -201,7 +201,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
           {facts.map((f, i) => (
             <div key={f.k} className={`flex flex-col-reverse justify-end bg-white px-5 py-4 sm:py-5 ${i === 0 ? "col-span-2 md:col-span-1" : ""}`}>
               <dt className="mt-1 text-[13px] text-muted">{f.k}</dt>
-              <dd className={`font-display text-xl leading-snug font-semibold tracking-[-0.01em] ${i === 0 ? "text-brand" : "text-ink"}`}>
+              <dd className={`font-display text-lg leading-snug font-semibold tracking-[-0.01em] sm:text-xl ${i === 0 ? "text-brand" : "text-ink"}`}>
                 {f.v}
                 {f.sub && <span className="text-xs font-medium text-muted">{f.sub}</span>}
               </dd>
@@ -215,7 +215,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
           {info?.overview && (
             <section {...reveal}>
               <Heading>{t.aboutTitle}</Heading>
-              <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-ink-600">{info.overview}</p>
+              <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-ink-600 sm:text-[16px]">{info.overview}</p>
               {info.curriculum.length > 0 && (
                 <>
                   <h3 className="mt-7 text-[13px] text-muted">{t.curriculum}</h3>
@@ -250,7 +250,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
                   key={r.text}
                   {...reveal}
                   style={d(i * 0.06)}
-                  className="group flex items-center gap-4 rounded-[14px] border border-ink/10 p-3.5 pr-4 text-[15px] leading-snug transition-colors hover:border-ink/25"
+                  className="group flex items-center gap-4 rounded-[14px] border border-ink/10 p-3.5 pr-4 text-[14px] leading-snug sm:text-[15px] transition-colors hover:border-ink/25"
                 >
                   <span className="grid size-14 shrink-0 place-items-center rounded-xl bg-ink-50">
                     <Picture
@@ -274,7 +274,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
                     <path d="m6 9 6 6 6-6" />
                   </svg>
                 </summary>
-                <div className="space-y-5 border-t border-ink/10 px-4 py-4 text-[15px] leading-relaxed text-ink-600">
+                <div className="space-y-5 border-t border-ink/10 px-4 py-4 text-[14px] leading-relaxed text-ink-600 sm:text-[15px]">
                   {rules.map((r) => (
                     <div key={r.k}>
                       <h3 className="font-semibold text-ink">{r.k}</h3>
@@ -308,7 +308,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
                   </span>
                   <div className="pt-1.5">
                     <h3 className="font-display text-[17px] font-semibold text-ink">{s.title}</h3>
-                    <p className="mt-1 max-w-xl text-[15px] leading-relaxed text-muted">{s.text}</p>
+                    <p className="mt-1 max-w-xl text-[14px] leading-relaxed text-muted sm:text-[15px]">{s.text}</p>
                     <p className="mt-3 inline-block rounded-md bg-ink-50 px-2.5 py-1 text-[13px] text-ink-600">{s.result}</p>
                   </div>
                 </li>
@@ -351,7 +351,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
                       <p className="text-[13px] text-muted">{fill(t.totalPrice, { years: duration })}</p>
                       {saving && p.years ? <p className="mt-1 text-sm font-semibold text-success">{fill(t.totalSaving, { n: usd(saving * p.years) })}</p> : null}
                     </div>
-                    <p className="font-display text-3xl leading-none font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
+                    <p className="font-display text-[26px] leading-none font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
                       <CountUp value={total} locale="en" prefix="$" />
                     </p>
                   </div>
@@ -421,7 +421,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
                   {p.discount ? <span className="rounded-md bg-sun/15 px-1.5 py-0.5 text-xs font-semibold text-[#a35f00]">−{Math.round(p.discount)}%</span> : null}
                 </p>
               ) : null}
-              <p className="mt-1 font-display text-[44px] leading-none font-semibold tracking-[-0.03em] text-ink">{usd(p.fee, dict.common.onRequest)}</p>
+              <p className="mt-1 font-display text-[36px] leading-none sm:text-[44px] font-semibold tracking-[-0.03em] text-ink">{usd(p.fee, dict.common.onRequest)}</p>
               {saving ? <p className="mt-3 text-sm font-semibold text-success">{fill(t.saving, { n: usd(saving) })}</p> : null}
               <div className="mt-6 grid gap-2">
                 <Link href={href(`/apply?program=${p.id}`)} className="btn-primary btn-shine w-full" style={{ boxShadow: "none" }}>{t.apply}</Link>
@@ -444,8 +444,8 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
         <div {...reveal} className="relative overflow-hidden rounded-[22px] bg-ink-900 text-white">
           <Photo slug={p.uni} name="" className="!absolute inset-y-0 right-0 hidden w-[55%] opacity-40 [mask-image:linear-gradient(to_left,#000_20%,transparent)] lg:block" sizes="55vw" />
           <div className="relative max-w-2xl p-7 sm:p-12">
-            <h2 className="font-display text-[clamp(26px,3vw,36px)] leading-tight font-semibold tracking-[-0.02em] text-balance">{t.ctaTitle}</h2>
-            <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-white/70">{t.ctaText}</p>
+            <h2 className="font-display text-[clamp(24px,3vw,36px)] leading-tight font-semibold tracking-[-0.02em] text-balance">{t.ctaTitle}</h2>
+            <p className="mt-3 max-w-xl text-[14px] leading-relaxed text-white/70 sm:text-[15px]">{t.ctaText}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href={href(`/apply?program=${p.id}`)} className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[15px] font-semibold text-ink-900 transition-colors hover:bg-brand-soft">
                 {t.apply}
@@ -468,7 +468,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
       {similar.length > 0 && (
         <section className="container-page mt-20">
           <div {...reveal} className="flex flex-wrap items-end justify-between gap-4 border-t border-ink/15 pt-5">
-            <h2 className="font-display text-[22px] font-semibold tracking-[-0.01em] sm:text-2xl">{t.similar}</h2>
+            <h2 className="font-display text-[20px] font-semibold tracking-[-0.01em] sm:text-2xl">{t.similar}</h2>
             <Link href={href("/programs")} className="group inline-flex items-center gap-1.5 text-sm font-semibold text-ink-600 transition-colors hover:text-brand">
               {dict.footer.allPrograms}
               <Arrow />
