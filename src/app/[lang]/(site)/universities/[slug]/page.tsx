@@ -5,6 +5,7 @@ import { Suspense, type CSSProperties, type ReactNode } from "react";
 import { UniCover } from "@/components/cards";
 import { CountUp } from "@/components/motion";
 import { ProgramRow } from "@/components/program-row";
+import { SectionTabs } from "@/components/section-tabs";
 import { UniversityDetailSkeleton } from "@/components/university-detail-skeleton";
 import { IconPin } from "@/components/icons";
 import { fill } from "@/i18n/config";
@@ -96,12 +97,13 @@ function University({ slug, i18n }: { slug: string; i18n: I18n }) {
     { k: t.living, v: living ?? "—" },
     { k: t.founded, v: uni.founded ?? "—" },
   ];
+  const tab = (id: string, text: string): [string, string] => [id, text];
   const tabs = [
-    ...(uni.description ? [["about", t.tabAbout]] : []),
-    ["programs", t.tabPrograms],
-    ["fees", t.tabFees],
-    ["apply", t.tabApply],
-    ...(similar.length ? [["similar", t.tabSimilar]] : []),
+    ...(uni.description ? [tab("about", t.tabAbout)] : []),
+    tab("programs", t.tabPrograms),
+    tab("fees", t.tabFees),
+    tab("apply", t.tabApply),
+    ...(similar.length ? [tab("similar", t.tabSimilar)] : []),
   ];
 
   return (
@@ -172,13 +174,7 @@ function University({ slug, i18n }: { slug: string; i18n: I18n }) {
 
       {/* Section links stay under the header while scrolling. */}
       <div className="sticky top-16 z-30 mt-10 border-b border-line bg-white/90 backdrop-blur">
-        <nav className="container-page flex gap-7 overflow-x-auto text-[15px] font-semibold whitespace-nowrap">
-          {tabs.map(([id, text]) => (
-            <a key={id} href={`#${id}`} className="border-b-2 border-transparent py-3.5 text-ink-600 transition-colors hover:border-brand hover:text-ink">
-              {text}
-            </a>
-          ))}
-        </nav>
+        <SectionTabs tabs={tabs} />
       </div>
 
       <div className="container-page mt-12 grid gap-12 lg:grid-cols-[1fr_340px] lg:gap-14">
