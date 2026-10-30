@@ -197,7 +197,7 @@ const az: Dictionary = {
     } as Record<string, string>,
     stepsEyebrow: "4 addım",
     stepsTitle: "Axtarışdan tələbə biletinə qədər",
-    stepsText: "Proqram seçimindən hava limanında qarşılanmağa qədər hər addımda yanınızdayıq. Tələbə üçün pulsuzdur: bizə universitetlər ödəyir.",
+    stepsText: "Proqram seçimindən hava limanında qarşılanmağa qədər hər addımda yanınızdayıq. Müraciətinizin hansı mərhələdə olduğunu və növbəti addımı həmişə bilirsiniz.",
     stepLabel: "Addım",
     stepsCard: { title: "Tələbə bileti", nameLabel: "Tələbə", name: "Adınız", uniLabel: "Universitet", uni: "Türkiyədəki universitetiniz" },
     steps: [
@@ -219,7 +219,7 @@ const az: Dictionary = {
       { q: "Sənədləri nə vaxt vermək lazımdır?", a: "Əsas qəbul payız semestrinədir, bəzi proqramlar yazda da tələbə qəbul edir. Müddətlər hər proqramın səhifəsində göstərilib, məsləhətçi isə yerlərin harada tez bitdiyini deyəcək." },
       { q: "Təhsil neçəyədir?", a: "Kataloqda qiymətlər ildə ən azı {min} təşkil edir. Endirimli dəqiq məbləği müraciətdən əvvəl məsləhətçi təsdiqləyir." },
       { q: "Endirimlər var?", a: "Bəli. Bir çox proqramda endirim artıq nəzərə alınıb — kataloqda rəsmi qiymətin yanında görünür. Yekun məbləği məsləhətçi müraciətdən əvvəl təsdiqləyir." },
-      { q: "Xidmətləriniz neçəyədir?", a: "Tələbə üçün məsləhət və müraciət pulsuzdur: bizə tərəfdaş universitetlər ödəyir." },
+      { q: "Köməyinizə nələr daxildir?", a: "Proqram və universitet seçimi, sənədlərin yoxlanması və tərcüməsi, müraciətin verilməsi və statusun izlənməsi, viza, mənzil və hava limanında qarşılanma ilə bağlı kömək." },
       { q: "Təhsil zamanı harada yaşamaq olar?", a: "Əksər özəl universitetlərin öz və ya tərəfdaş yataqxanaları var. Mənzil də kirayələmək olar — büdcənizə uyğun variant tapmağa kömək edəcəyik." },
       { q: "Viza və yaşayış icazəsi lazımdır?", a: "Vətəndaşlıqdan asılıdır. Qəbuldan sonra universitet məktub göndərir, lazım olarsa onunla tələbə vizası, Türkiyədə isə yaşayış icazəsi alınır. Hər mərhələdə kömək edirik." },
       { q: "Təhsil nə qədər davam edir?", a: "Bakalavr — 4 il, stomatologiya — 5, tibb — 6 il. Magistratura — 1,5–2 il. Hazırlıq dil ili lazımdırsa, müddətə əlavə olunur." },

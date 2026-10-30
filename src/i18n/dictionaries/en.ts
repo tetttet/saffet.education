@@ -197,7 +197,7 @@ const en: Dictionary = {
     } as Record<string, string>,
     stepsEyebrow: "4 steps",
     stepsTitle: "From first search to student card",
-    stepsText: "We're with you at every step, from choosing a programme to meeting you at the airport. It's free for students: universities pay us.",
+    stepsText: "We're with you at every step, from choosing a programme to meeting you at the airport. You always know where your application stands and what comes next.",
     stepLabel: "Step",
     stepsCard: { title: "Student card", nameLabel: "Student", name: "Your name", uniLabel: "University", uni: "Your university in Türkiye" },
     steps: [
@@ -219,7 +219,7 @@ const en: Dictionary = {
       { q: "When should I apply?", a: "The main intake is for the autumn semester, and some programmes also start in spring. Each programme page shows its deadlines, and your advisor will tell you where places fill up early." },
       { q: "How much does it cost?", a: "Tuition in our catalogue starts at {min} per year. Your advisor confirms the exact discounted fee before you apply." },
       { q: "Are there discounts?", a: "Yes. Many programmes already include a discount, shown next to the official fee in the catalogue. Your advisor confirms the final amount before you apply." },
-      { q: "What do your services cost?", a: "Nothing for students: our partner universities pay us." },
+      { q: "What does your help include?", a: "Choosing a programme and university, checking and translating documents, submitting your application and tracking its status, plus help with your visa, housing and airport pickup." },
       { q: "Where will I live?", a: "Most private universities have their own or partner dormitories. You can also rent a flat, and we'll help you find one that fits your budget." },
       { q: "Do I need a visa and a residence permit?", a: "It depends on your citizenship. Once admitted you get a letter from the university, use it for a student visa if you need one, and then get a residence permit in Türkiye. We help at every stage." },
       { q: "How long are the programmes?", a: "A bachelor's takes 4 years, dentistry 5 and medicine 6. A master's takes 1.5–2 years. A preparatory language year adds one more." },

@@ -197,7 +197,7 @@ const tr: Dictionary = {
     } as Record<string, string>,
     stepsEyebrow: "4 adım",
     stepsTitle: "İlk aramadan öğrenci kartına",
-    stepsText: "Program seçiminden havalimanında karşılamaya kadar her adımda yanınızdayız. Öğrenciler için ücretsiz: bize üniversiteler ödüyor.",
+    stepsText: "Program seçiminden havalimanında karşılamaya kadar her adımda yanınızdayız. Başvurunuzun hangi aşamada olduğunu ve sıradaki adımı her zaman bilirsiniz.",
     stepLabel: "Adım",
     stepsCard: { title: "Öğrenci kartı", nameLabel: "Öğrenci", name: "Adınız", uniLabel: "Üniversite", uni: "Türkiye'deki üniversiteniz" },
     steps: [
@@ -219,7 +219,7 @@ const tr: Dictionary = {
       { q: "Ne zaman başvurmalıyım?", a: "Ana dönem güz dönemidir, bazı programlar baharda da başlar. Her program sayfasında son tarihler yazar; danışmanınız kontenjanın erken dolduğu yerleri söyler." },
       { q: "Ne kadara mal olur?", a: "Kataloğumuzdaki ücretler yıllık {min}'dan başlıyor. Kesin indirimli ücreti başvurudan önce danışmanınız onaylar." },
       { q: "İndirim var mı?", a: "Evet. Birçok programda indirim zaten uygulanmış ve katalogda resmi ücretin yanında gösteriliyor. Son tutarı başvurudan önce danışmanınız onaylar." },
-      { q: "Hizmetleriniz ne kadar?", a: "Öğrenciler için hiçbir şey: bize partner üniversiteler ödüyor." },
+      { q: "Yardımınıza neler dahil?", a: "Program ve üniversite seçimi, belgelerin kontrolü ve çevirisi, başvurunun yapılması ve takibi, ayrıca vize, konaklama ve havalimanında karşılama desteği." },
       { q: "Nerede kalacağım?", a: "Çoğu vakıf üniversitesinin kendi veya anlaşmalı yurtları var. Ev de kiralayabilirsiniz; bütçenize uygun olanı bulmanıza yardım ederiz." },
       { q: "Vize ve ikamet izni gerekli mi?", a: "Vatandaşlığınıza bağlı. Kabulden sonra üniversiteden bir mektup alırsınız, gerekiyorsa onunla öğrenci vizesi alır, ardından Türkiye'de ikamet izni çıkarırsınız. Her aşamada yardım ederiz." },
       { q: "Programlar kaç yıl sürer?", a: "Lisans 4 yıl, diş hekimliği 5, tıp 6 yıl sürer. Yüksek lisans 1,5–2 yıl. Dil hazırlığı bir yıl daha ekler." },

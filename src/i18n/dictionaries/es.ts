@@ -197,7 +197,7 @@ const es: Dictionary = {
     } as Record<string, string>,
     stepsEyebrow: "4 pasos",
     stepsTitle: "De la primera búsqueda al carné de estudiante",
-    stepsText: "Te acompañamos en cada paso, desde elegir programa hasta recogerte en el aeropuerto. Es gratis para estudiantes: nos pagan las universidades.",
+    stepsText: "Te acompañamos en cada paso, desde elegir programa hasta recogerte en el aeropuerto. Siempre sabrás en qué fase está tu solicitud y cuál es el siguiente paso.",
     stepLabel: "Paso",
     stepsCard: { title: "Carné de estudiante", nameLabel: "Estudiante", name: "Tu nombre", uniLabel: "Universidad", uni: "Tu universidad en Turquía" },
     steps: [
@@ -219,7 +219,7 @@ const es: Dictionary = {
       { q: "¿Cuándo debo solicitar?", a: "La admisión principal es para el semestre de otoño, y algunos programas también empiezan en primavera. Cada programa muestra sus plazos y tu asesor te avisará de dónde se llenan antes las plazas." },
       { q: "¿Cuánto cuesta?", a: "En nuestro catálogo la matrícula empieza en {min} al año. Tu asesor confirma el precio exacto con descuento antes de solicitar." },
       { q: "¿Hay descuentos?", a: "Sí. Muchos programas ya incluyen un descuento, que se muestra junto al precio oficial en el catálogo. Tu asesor confirma el importe final antes de solicitar." },
-      { q: "¿Cuánto cuestan vuestros servicios?", a: "Nada para los estudiantes: nos pagan las universidades asociadas." },
+      { q: "¿Qué incluye vuestra ayuda?", a: "Elección de programa y universidad, revisión y traducción de documentos, presentación de la solicitud y seguimiento de su estado, además de ayuda con el visado, el alojamiento y la recogida en el aeropuerto." },
       { q: "¿Dónde viviré?", a: "La mayoría de universidades privadas tienen residencias propias o concertadas. También puedes alquilar un piso y te ayudamos a encontrar uno que encaje con tu presupuesto." },
       { q: "¿Necesito visado y permiso de residencia?", a: "Depende de tu nacionalidad. Tras la admisión recibes una carta de la universidad, con ella pides el visado de estudiante si lo necesitas y luego el permiso de residencia en Turquía. Te ayudamos en cada etapa." },
       { q: "¿Cuánto duran los programas?", a: "Un grado dura 4 años, odontología 5 y medicina 6. Un máster, 1,5–2 años. El año preparatorio de idioma añade uno más." },

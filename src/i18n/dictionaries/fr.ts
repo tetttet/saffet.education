@@ -197,7 +197,7 @@ const fr: Dictionary = {
     } as Record<string, string>,
     stepsEyebrow: "4 étapes",
     stepsTitle: "De la première recherche à la carte d'étudiant",
-    stepsText: "Nous vous accompagnons à chaque étape, du choix du programme à l'accueil à l'aéroport. C'est gratuit pour les étudiants : ce sont les universités qui nous rémunèrent.",
+    stepsText: "Nous vous accompagnons à chaque étape, du choix du programme à l'accueil à l'aéroport. Vous savez toujours où en est votre dossier et quelle est la prochaine étape.",
     stepLabel: "Étape",
     stepsCard: { title: "Carte d'étudiant", nameLabel: "Étudiant", name: "Votre nom", uniLabel: "Université", uni: "Votre université en Turquie" },
     steps: [
@@ -219,7 +219,7 @@ const fr: Dictionary = {
       { q: "Quand candidater ?", a: "La rentrée principale a lieu au semestre d'automne, et certains programmes démarrent aussi au printemps. Chaque page de programme indique ses dates limites, et votre conseiller vous dira où les places partent vite." },
       { q: "Combien ça coûte ?", a: "Dans notre catalogue, les frais commencent à {min} par an. Votre conseiller confirme le montant exact après réduction avant la candidature." },
       { q: "Y a-t-il des réductions ?", a: "Oui. De nombreux programmes incluent déjà une réduction, affichée à côté du tarif officiel dans le catalogue. Votre conseiller confirme le montant final avant la candidature." },
-      { q: "Combien coûtent vos services ?", a: "Rien pour les étudiants : ce sont nos universités partenaires qui nous rémunèrent." },
+      { q: "Que comprend votre accompagnement ?", a: "Le choix du programme et de l'université, la vérification et la traduction des documents, le dépôt de la candidature et le suivi de son statut, ainsi que l'aide pour le visa, le logement et l'accueil à l'aéroport." },
       { q: "Où vais-je loger ?", a: "La plupart des universités privées ont leurs propres résidences ou des résidences partenaires. Vous pouvez aussi louer un appartement, et nous vous aidons à en trouver un adapté à votre budget." },
       { q: "Ai-je besoin d'un visa et d'un titre de séjour ?", a: "Cela dépend de votre nationalité. Une fois admis, vous recevez une lettre de l'université, qui sert à demander un visa étudiant si nécessaire, puis un titre de séjour en Turquie. Nous vous aidons à chaque étape." },
       { q: "Combien de temps durent les études ?", a: "Une licence dure 4 ans, dentaire 5 et médecine 6. Un master dure 1,5 à 2 ans. L'année préparatoire de langue en ajoute une." },
