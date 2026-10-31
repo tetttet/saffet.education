@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Manrope, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { RevealObserver } from "@/components/motion";
 import { fill, locales } from "@/i18n/config";
 import { getI18n } from "@/i18n/server";
@@ -40,6 +41,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
       <body className="flex min-h-full flex-col font-sans">
         {children}
         <RevealObserver />
+        <Analytics />
       </body>
     </html>
   );

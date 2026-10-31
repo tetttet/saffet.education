@@ -26,6 +26,6 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Skip Next internals and files with an extension (favicon.ico, images).
-  matcher: ["/((?!_next|.*\\..*).*)"],
+  // Skip Next internals, Vercel Analytics and files with an extension (favicon.ico, images).
+  matcher: ["/((?!_next|_vercel|.*\\..*).*)"],
 };
