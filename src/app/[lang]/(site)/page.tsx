@@ -6,15 +6,17 @@ import { HeroSlides } from "@/components/hero-slides";
 import { HomePromos } from "@/components/home-promos";
 import { FaqList } from "@/components/faq-list";
 import { HowItWorks } from "@/components/how-it-works";
+import { absoluteUrl, JsonLd } from "@/components/json-ld";
 import { CountUp } from "@/components/motion";
 import { CityArt } from "@/components/city-art";
 import { FieldArt, fieldArtBg } from "@/components/field-art";
 import { PopularUnis } from "@/components/popular-unis";
-import { fill } from "@/i18n/config";
+import { fill, localize } from "@/i18n/config";
 import { getI18n } from "@/i18n/server";
 import { facet, totals, universities } from "@/lib/data";
 import { uniImage, uniLogo } from "@/lib/images";
 import { hue, initials, label, num, plural, usd } from "@/lib/format";
+import { catalogueLink } from "@/lib/landings";
 import { catalogueVars, pageMetadata } from "@/lib/metadata";
 import { reveal } from "@/lib/reveal";
 import { site, whatsappLink } from "@/lib/site";
@@ -53,6 +55,34 @@ export default async function Home() {
 
   return (
     <>
+      <JsonLd
+        data={[
+          {
+            "@type": "EducationalOrganization",
+            "@id": absoluteUrl("/#organization"),
+            name: site.name,
+            url: absoluteUrl(localize(locale, "/")),
+            logo: absoluteUrl("/logo.png"),
+            telephone: site.phone,
+            email: site.email,
+          },
+          {
+            "@type": "WebSite",
+            name: site.name,
+            url: absoluteUrl(localize(locale, "/")),
+            inLanguage: locale,
+            potentialAction: {
+              "@type": "SearchAction",
+              target: { "@type": "EntryPoint", urlTemplate: `${absoluteUrl(localize(locale, "/programs"))}?q={search_term_string}` },
+              "query-input": "required name=search_term_string",
+            },
+          },
+          {
+            "@type": "FAQPage",
+            mainEntity: h.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: fill(f.a, vars) } })),
+          },
+        ]}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#f2f4f8]">
         <div className="relative mx-auto grid max-w-[1380px] px-4 pb-24 sm:px-8 lg:min-h-[620px] lg:grid-cols-[44%_56%] lg:px-16 lg:pb-0">
@@ -220,7 +250,7 @@ export default async function Home() {
             <Link
               key={f.value}
               {...reveal}
-              href={href(`/programs?field=${encodeURIComponent(f.value)}`)}
+              href={href(catalogueLink("field", f.value))}
               className="group relative flex flex-col overflow-hidden rounded-[18px] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-hover sm:aspect-[4/5] sm:p-5 lg:aspect-[5/6]"
               style={{ ...d(i * 0.07), backgroundColor: fieldArtBg(f.value) }}
             >
@@ -241,7 +271,7 @@ export default async function Home() {
           {otherFields.map((f, i) => (
             <li key={f.value} {...reveal} style={d((i % 4) * 0.05)}>
               <Link
-                href={href(`/programs?field=${encodeURIComponent(f.value)}`)}
+                href={href(catalogueLink("field", f.value))}
                 className="group flex h-full flex-col justify-between gap-0.5 border-b border-ink/10 py-3 transition-colors hover:border-brand sm:flex-row sm:items-baseline sm:gap-3 sm:py-3.5"
               >
                 <span className="text-[14px] leading-snug font-semibold text-ink transition-colors group-hover:text-brand sm:text-[15px]">{label(t.labels.field, f.value)}</span>

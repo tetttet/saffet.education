@@ -5,6 +5,7 @@ import { CountUp } from "./motion";
 import { getI18n } from "@/i18n/server";
 import { totals } from "@/lib/data";
 import { reveal } from "@/lib/reveal";
+import { catalogueLink } from "@/lib/landings";
 import { site, whatsappLink } from "@/lib/site";
 
 export async function Footer() {
@@ -18,7 +19,7 @@ export async function Footer() {
         { href: href("/programs"), label: t.footer.allPrograms },
         { href: href("/universities"), label: t.nav.universities },
         { href: href("/programs?language=English"), label: t.footer.english },
-        { href: href("/programs?degree=Master%27s+Degree"), label: t.footer.masters },
+        { href: href("/study/master"), label: t.footer.masters },
         { href: href("/#how"), label: t.nav.how },
         { href: href("/#faq"), label: t.footer.faq },
         { href: href("/apply"), label: t.footer.apply },
@@ -26,7 +27,7 @@ export async function Footer() {
     },
     {
       title: t.footer.cities,
-      links: Object.entries(t.labels.city).map(([en, name]) => ({ href: href(`/universities?city=${en}`), label: name })),
+      links: Object.entries(t.labels.city).map(([en, name]) => ({ href: href(catalogueLink("city", en)), label: name })),
     },
     {
       title: t.footer.contacts,

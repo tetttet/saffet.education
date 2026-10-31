@@ -12,13 +12,22 @@ import { fill } from "@/i18n/config";
 import { getI18n, type I18n } from "@/i18n/server";
 import { MULTI_KEYS, facet, getUniversity, searchPrograms, universities, type ProgramQuery } from "@/lib/data";
 import { label, num } from "@/lib/format";
+import { landingFor } from "@/lib/landings";
 import { catalogueVars, pageMetadata } from "@/lib/metadata";
 
-// Filtered and paged views share the catalogue's canonical URL.
-export async function generateMetadata(): Promise<Metadata> {
+// Filtered views get a title of their own. A single filter with a landing page points to that page as
+// canonical; every other filtered or paged view shares the catalogue's canonical URL.
+export async function generateMetadata({ searchParams }: PageProps<"/[lang]/programs">): Promise<Metadata> {
   const i18n = await getI18n();
   const { t, locale } = i18n;
-  return pageMetadata({ locale, path: "/programs", title: t.programs.metaTitle, description: fill(t.programs.metaDescription, catalogueVars(i18n)) });
+  const query = toQuery(await searchParams);
+  const chosen = MULTI_KEYS.flatMap((k) => (query[k] ?? []).map((v) => ({ k, v })));
+  const description = fill(t.programs.metaDescription, catalogueVars(i18n));
+  if (!chosen.length) return pageMetadata({ locale, path: "/programs", title: t.programs.metaTitle, description });
+  const onlyFilter = chosen.length === 1 && !["q", "uni", "max", "open", "sort", "page"].some((k) => query[k as keyof ProgramQuery]);
+  const landing = onlyFilter ? landingFor(chosen[0].k, chosen[0].v) : undefined;
+  const filters = chosen.map(({ k, v }) => label(t.labels[k], v)).join(" · ");
+  return pageMetadata({ locale, path: landing ? `/study/${landing.slug}` : "/programs", title: fill(t.landing.filtered, { filters }), description });
 }
 
 const KEYS = ["q", "city", "degree", "language", "field", "uni", "max", "open", "sort"] as const;

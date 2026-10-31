@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { localize, locales, type Locale } from "@/i18n/config";
 import { programs, universities } from "@/lib/data";
+import { landings } from "@/lib/landings";
 import { languageAlternates } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
@@ -19,6 +20,7 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
     "/programs",
     "/universities",
     "/apply",
+    ...landings.map((l) => `/study/${l.slug}`),
     ...universities.map((u) => `/universities/${u.slug}`),
     ...programs.map((p) => `/programs/${p.id}`),
   ];

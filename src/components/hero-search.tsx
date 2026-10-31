@@ -18,8 +18,8 @@ export async function HeroSearch() {
       .sort((a, b) => a.label.localeCompare(b.label)),
     universities: [...universities].sort((a, b) => a.name.localeCompare(b.name)).map((u) => ({ value: u.name, label: u.name })),
     trending: [
-      { label: s.trendMedicine, href: href("/programs?field=Medicine+%26+Health") },
-      { label: s.trendIt, href: href("/programs?field=Computer+Science+%26+IT") },
+      { label: s.trendMedicine, href: href("/study/medicine") },
+      { label: s.trendIt, href: href("/study/computer-science") },
       { label: "MBA", href: href("/programs?q=Business+Administration&degree=Master%27s+Degree") },
       { label: s.trendPsychology, href: href("/programs?q=Psychology") },
       { label: s.trendDentistry, href: href("/programs?q=Dentistry") },

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense, type CSSProperties, type ReactNode } from "react";
 import { UniCover } from "@/components/cards";
+import { absoluteUrl, breadcrumbs, JsonLd } from "@/components/json-ld";
 import { CountUp } from "@/components/motion";
 import { ProgramRow } from "@/components/program-row";
 import { SectionTabs } from "@/components/section-tabs";
@@ -106,8 +107,26 @@ function University({ slug, i18n }: { slug: string; i18n: I18n }) {
     ...(similar.length ? [tab("similar", t.tabSimilar)] : []),
   ];
 
+  const image = uniImage(uni.slug);
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbs(locale, [[dict.nav.home, "/"], [dict.nav.universities, "/universities"], [uni.name, `/universities/${uni.slug}`]]),
+          {
+            "@type": "CollegeOrUniversity",
+            name: uni.name,
+            ...(uni.alternateName && { alternateName: uni.alternateName }),
+            url: absoluteUrl(`/${locale}/universities/${uni.slug}`),
+            ...(uni.website && { sameAs: uni.website }),
+            ...(texts.description && { description: texts.description }),
+            ...(image && { image: absoluteUrl(image) }),
+            ...(uni.founded && { foundingDate: String(uni.founded) }),
+            address: { "@type": "PostalAddress", addressLocality: uni.city, addressCountry: "TR", ...(uni.address && { streetAddress: uni.address }) },
+            ...(uni.lat != null && uni.lng != null && { geo: { "@type": "GeoCoordinates", latitude: uni.lat, longitude: uni.lng } }),
+          },
+        ]}
+      />
       {/* Campus photo across the full width, darkened toward the bottom-left where the text sits. */}
       <section className="relative isolate overflow-hidden bg-ink-900">
         <UniCover uni={uni} className="photo-in absolute inset-0" sizes="100vw" priority />

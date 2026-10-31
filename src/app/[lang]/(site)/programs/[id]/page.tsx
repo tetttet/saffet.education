@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense, type CSSProperties, type ReactNode } from "react";
+import { absoluteUrl, breadcrumbs, JsonLd } from "@/components/json-ld";
 import { CountUp } from "@/components/motion";
 import { ProgramRow } from "@/components/program-row";
 import { ProgramDetailSkeleton } from "@/components/program-detail-skeleton";
@@ -54,6 +55,9 @@ export default async function ProgramPage({ params }: PageProps<"/[lang]/program
 }
 
 const d = (seconds: number) => ({ "--d": `${seconds}s` }) as CSSProperties;
+
+/** Language of teaching as a language code, for structured data. */
+const courseLanguages: Record<string, string> = { English: "en", Turkish: "tr", Arabic: "ar", Russian: "ru", German: "de" };
 
 /** Campus photo, or the university's logo on a soft tint when there is none (same fallback as the catalog rows). */
 function Photo({ slug, name, className, sizes, priority }: { slug: string; name: string; className: string; sizes: string; priority?: boolean }) {
@@ -122,6 +126,26 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbs(locale, [[dict.nav.home, "/"], [dict.nav.programs, "/programs"], [name, `/programs/${p.id}`]]),
+          {
+            "@type": "Course",
+            name,
+            description: info?.overview ?? `${name} — ${p.uniName}`,
+            url: absoluteUrl(`/${locale}/programs/${p.id}`),
+            provider: { "@type": "CollegeOrUniversity", name: p.uniName, url: absoluteUrl(`/${locale}/universities/${p.uni}`) },
+            educationalCredentialAwarded: label(labels.degree, p.degree),
+            ...(courseLanguages[p.language] && { inLanguage: courseLanguages[p.language] }),
+            ...(p.fee != null && { offers: { "@type": "Offer", category: "Paid", price: Math.round(p.fee), priceCurrency: "USD" } }),
+            hasCourseInstance: {
+              "@type": "CourseInstance",
+              courseMode: "Onsite",
+              location: { "@type": "Place", name: p.uniName, address: { "@type": "PostalAddress", addressLocality: p.city, addressCountry: "TR" } },
+            },
+          },
+        ]}
+      />
       {/* Soft blue band with a dotted corner; the facts card overlaps its lower edge. */}
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eaf1ff_0%,#f3f7ff_65%,#fafcff_100%)]">
         <div aria-hidden className="hero-dots pointer-events-none absolute inset-y-0 right-0 w-2/3" />
