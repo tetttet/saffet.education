@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Program } from "@/lib/data";
+import { FavoriteButton } from "./favorite-button";
 import { IconClock, IconGlobe, IconPin } from "./icons";
 import { getI18n } from "@/i18n/server";
 import { hue, initials, label, usd, years } from "@/lib/format";
@@ -19,6 +20,8 @@ export async function ProgramRow({ p, compact = false, hideUni = false }: { p: P
   const h = hue(p.uni);
   const discounted = p.feeOfficial && p.fee && p.feeOfficial > p.fee;
   return (
+    // The heart sits beside the link, not inside it: a button cannot be nested in a link.
+    <div className="relative">
     <Link
       href={href(`/programs/${p.id}`)}
       className="group flex flex-col overflow-hidden rounded-[18px] border border-ink/10 bg-white transition-colors duration-300 hover:border-ink/25 sm:flex-row"
@@ -34,7 +37,7 @@ export async function ProgramRow({ p, compact = false, hideUni = false }: { p: P
       )}
 
       <div className="flex min-w-0 flex-1 flex-col gap-2 p-5">
-        <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
+        <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] ${hideUni ? "pr-10 sm:pr-0" : ""}`}>
           <span className="rounded-md bg-brand-soft px-2 py-0.5 font-semibold text-brand">{label(t.labels.degree, p.degree)}</span>
           <span className="text-muted">{label(t.labels.field, p.field)}</span>
           {compact && p.discount ? <span className="ml-auto rounded-md bg-sun/15 px-2 py-0.5 text-xs font-semibold text-[#a35f00]">−{Math.round(p.discount)}%</span> : null}
@@ -68,7 +71,7 @@ export async function ProgramRow({ p, compact = false, hideUni = false }: { p: P
 
       {!compact && (
         <div className="flex shrink-0 items-end justify-between gap-4 border-t border-ink/10 p-5 sm:w-48 sm:flex-col sm:items-end sm:justify-between sm:border-t-0 sm:border-l sm:text-right">
-          <div>
+          <div className={hideUni ? "sm:pt-9" : ""}>
             {p.discount ? <span className="mb-1.5 inline-block rounded-md bg-sun/15 px-2 py-0.5 text-xs font-semibold text-[#a35f00]">−{Math.round(p.discount)}%</span> : null}
             <Price p={p} perYear={t.common.perYear} onRequest={t.common.onRequest} discounted={Boolean(discounted)} />
           </div>
@@ -76,6 +79,8 @@ export async function ProgramRow({ p, compact = false, hideUni = false }: { p: P
         </div>
       )}
     </Link>
+    <FavoriteButton id={p.id} labels={{ add: t.favorites.add, remove: t.favorites.remove }} className={`absolute size-9 ${hideUni ? "top-3 right-3" : "top-3 left-3"}`} />
+    </div>
   );
 }
 

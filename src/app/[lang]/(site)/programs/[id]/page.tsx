@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense, type CSSProperties, type ReactNode } from "react";
 import { absoluteUrl, breadcrumbs, JsonLd } from "@/components/json-ld";
+import { FavoriteButton } from "@/components/favorite-button";
 import { CountUp } from "@/components/motion";
 import { ProgramRow } from "@/components/program-row";
 import { ProgramDetailSkeleton } from "@/components/program-detail-skeleton";
@@ -199,6 +200,7 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
                   {t.aboutUni}
                   <Arrow />
                 </Link>
+                <FavoriteButton id={p.id} labels={{ add: dict.favorites.add, remove: dict.favorites.remove }} className="size-11" />
               </div>
             </div>
 

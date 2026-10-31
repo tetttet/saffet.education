@@ -490,3 +490,21 @@ select.field {
 @media (prefers-reduced-motion: reduce) {
   .hero-progress { animation: none !important; transform: scaleX(1); }
 }
+
+/* Heart: a short bounce when a program is saved or removed. */
+@keyframes heart-pop { 0%, 100% { transform: scale(1); } 45% { transform: scale(1.32); } }
+.heart-pop { animation: heart-pop 0.32s ease-out; }
+/* Heart in the header: two quick beats, then a pause, like a pulse. */
+@keyframes heart-beat { 0%, 40%, 100% { transform: scale(1); } 12% { transform: scale(1.2); } 26% { transform: scale(1.1); } }
+.heart-beat { animation: heart-beat 1.7s ease-in-out infinite; transform-origin: center; }
+/* Question before clearing the favorites. */
+@keyframes confirm-in { from { opacity: 0; transform: translateY(10px) scale(0.97); } }
+dialog[open].confirm { animation: confirm-in 0.22s cubic-bezier(0.2, 0.7, 0.2, 1); }
+/* Comparison table: each column drops into place with a small bounce. */
+@keyframes compare-in {
+  0% { opacity: 0; transform: translateY(-22px) scale(0.94); }
+  65% { opacity: 1; transform: translateY(4px) scale(1.015); }
+  100% { opacity: 1; transform: none; }
+}
+.compare-in { animation: compare-in 0.42s ease-out both; animation-delay: var(--d, 0s); }
+@media (prefers-reduced-motion: reduce) { .heart-pop, .heart-beat, .compare-in, dialog[open].confirm { animation: none; } }

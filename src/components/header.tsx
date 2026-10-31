@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { Logo } from "./logo";
 import { NavLinks, NavList } from "./nav-links";
+import { FavoritesLink } from "./favorite-button";
 import { MobileNav } from "./mobile-nav";
 import { LanguageSwitcher } from "./language-switcher";
 import { ProgramsMenu } from "./programs-menu";
@@ -28,6 +29,7 @@ export async function Header() {
           </nav>
         </div>
         <div className="hidden items-center gap-3 lg:flex">
+          <FavoritesLink href={href("/favorites")} label={t.nav.favorites} />
           <LanguageSwitcher locale={locale} label={t.nav.language} />
           <Link
             href={consult.href}
@@ -37,6 +39,7 @@ export async function Header() {
           </Link>
         </div>
         <div className="flex items-center gap-2 lg:hidden">
+          <FavoritesLink href={href("/favorites")} label={t.nav.favorites} />
           <LanguageSwitcher locale={locale} label={t.nav.language} compact />
           <MobileNav
             links={links}
