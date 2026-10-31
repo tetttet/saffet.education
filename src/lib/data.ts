@@ -1,4 +1,5 @@
 import "server-only";
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import universitiesJson from "@/data/universities.json";
@@ -90,12 +91,43 @@ export const programsOf = (slug: string) => programs.filter((p) => p.uni === slu
 const detailsDir = join(process.cwd(), "src", "data", "details");
 const detailsCache = new Map<string, Record<string, ProgramDetails>>();
 
-export function getProgramDetails(p: Program): ProgramDetails | null {
+// Translations of those texts live in one file per language, also read on first use.
+const programTranslationsDir = join(process.cwd(), "src", "data", "program-translations");
+const programTranslations = new Map<Locale, Record<string, string>>();
+
+function programTranslationsFor(locale: Locale) {
+  if (!programTranslations.has(locale)) {
+    const file = join(programTranslationsDir, `${locale}.json`);
+    programTranslations.set(locale, existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : {});
+  }
+  return programTranslations.get(locale)!;
+}
+
+/** A program text in the page language (scripts/translate-programs.mjs), English until translated. */
+export function programText(text: string, locale: Locale) {
+  if (locale === "en") return text;
+  const key = createHash("sha1").update(text.trim()).digest("hex").slice(0, 12);
+  return programTranslationsFor(locale)[key] ?? text;
+}
+
+export function getProgramDetails(p: Program, locale: Locale): ProgramDetails | null {
   if (!detailsCache.has(p.uni)) {
     const file = join(detailsDir, `${p.uni}.json`);
     detailsCache.set(p.uni, existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : {});
   }
-  return detailsCache.get(p.uni)![p.id] ?? null;
+  const details = detailsCache.get(p.uni)![p.id];
+  if (!details) return null;
+  const text = (s: string | null) => s && programText(s, locale);
+  // Two English items can come out the same once translated, and they are list keys on the page.
+  const list = (items: string[]) => [...new Set(items.map((s) => programText(s, locale)))];
+  return {
+    overview: text(details.overview),
+    curriculum: list(details.curriculum),
+    careers: list(details.careers),
+    entry: text(details.entry),
+    language: text(details.language),
+    documents: list(details.documents),
+  };
 }
 
 /** Distinct values of a program field, most frequent first. */

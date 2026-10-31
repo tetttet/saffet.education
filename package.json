@@ -9,6 +9,7 @@
     "lint": "eslint",
     "data": "node scripts/build-data.mjs",
     "translate": "node scripts/translate-universities.mjs",
+    "translate:programs": "node scripts/translate-programs.mjs",
     "og": "node scripts/og-cards.mjs",
     "images": "node scripts/optimize-images.mjs"
   },

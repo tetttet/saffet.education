@@ -8,7 +8,7 @@ import { ProgramDetailSkeleton } from "@/components/program-detail-skeleton";
 import { IconPin } from "@/components/icons";
 import { fill, intlLocale } from "@/i18n/config";
 import { getI18n, type I18n } from "@/i18n/server";
-import { getProgram, getProgramDetails, getUniversity, similarPrograms } from "@/lib/data";
+import { getProgram, getProgramDetails, getUniversity, programText, similarPrograms } from "@/lib/data";
 import { date, hue, initials, intakes, label, usd, usdShort, years } from "@/lib/format";
 import { uniImage, uniLogo } from "@/lib/images";
 import { programName } from "@/lib/program-names";
@@ -108,12 +108,12 @@ function Program({ id, i18n }: { id: string; i18n: I18n }) {
   ];
   // Shown right under the title; the field is already a tag above it and the application status sits on the photo.
   const details = [
-    { k: t.faculty, v: p.faculty ?? "—" },
+    { k: t.faculty, v: p.faculty ? programText(p.faculty, locale) : "—" },
     { k: t.mode, v: t.fullTime },
     { k: t.deadline, v: deadline ?? t.askConsultant },
   ];
   const similar = similarPrograms(p);
-  const info = getProgramDetails(p);
+  const info = getProgramDetails(p, locale);
   const rules = info ? [
     { k: t.entryRules, v: info.entry },
     { k: t.languageRules, v: info.language },
