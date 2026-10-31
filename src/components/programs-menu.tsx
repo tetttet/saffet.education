@@ -6,7 +6,6 @@ import { fill } from "@/i18n/config";
 import { getI18n, type I18n } from "@/i18n/server";
 import { facet, featuredPrograms, getUniversity, totals, type Program } from "@/lib/data";
 import { label, num, plural, usd } from "@/lib/format";
-import { catalogueLink } from "@/lib/landings";
 import { programName } from "@/lib/program-names";
 
 const degreeIcons = {
@@ -45,7 +44,7 @@ export async function ProgramsMenu() {
           key: d.value,
           trigger: (
             <Link
-              href={href(catalogueLink("degree", d.value))}
+              href={href(`/programs?degree=${encodeURIComponent(d.value)}`)}
               className="group/item flex h-12 items-center gap-3 rounded-xl px-3 transition-colors hover:bg-brand-soft in-data-active:bg-brand-soft"
             >
               <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-surface text-ink-600 transition-colors group-hover/item:bg-white group-hover/item:text-brand in-data-active:bg-white in-data-active:text-brand">
