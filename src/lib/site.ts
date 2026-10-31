@@ -2,7 +2,7 @@
 export const site = {
   name: "Saffet Education",
   // Public address used in canonical links, hreflang, Open Graph and the sitemap.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://saffet.education",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://saffet-education.vercel.app",
   phone: "+90 541 747 34 33",
   whatsapp: "905417473433",
   email: "info@saffet.education",
